@@ -1,1 +1,1 @@
-export class Config extends object {}
+export class Config extends Object {}

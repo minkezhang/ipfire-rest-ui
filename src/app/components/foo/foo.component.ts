@@ -8,7 +8,7 @@ import { IPFireService } from '../../services/ipfire.service';
   styleUrls: ['./foo.component.scss']
 })
 export class FooComponent implements OnInit {
-  foo = null;
+  config = null;
 
   constructor(private ipfire: IPFireService) {}
 

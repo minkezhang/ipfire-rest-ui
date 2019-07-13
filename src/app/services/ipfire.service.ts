@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 import { environment } from '../../environments/environment';
-import { Config } from '../../models/config';
+import { Config } from '../models/config';
 
 
 @Injectable({
