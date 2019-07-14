@@ -4,9 +4,10 @@ export class SshConfig extends Config {
   constructor(
     public enable_ssh_keys: boolean,
     public enable_ssh_passwords: boolean,
-    enable_ssh_portfw: boolean,
-    enable_ssh: boolean,
-    ssh_port: boolean) {
+    public enable_ssh_portfw: boolean,
+    public enable_ssh: boolean,
+    public ssh_port: boolean,
+    public enable_agent_forwarding: boolean) {
       super();
   }
 }

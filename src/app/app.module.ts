@@ -14,6 +14,9 @@ import {
   MatTableModule,
   MatFormFieldModule } from '@angular/material';
 import { LayoutModule } from '@angular/cdk/layout';
+
+import { RenderBoolPipe } from './pipes/render-bool';
+
 import { SshSessionsComponent } from './components/ssh-sessions/ssh-sessions.component';
 import { SshKeysComponent } from './components/ssh-keys/ssh-keys.component';
 import { SshConfigComponent } from './components/ssh-config/ssh-config.component'
@@ -23,7 +26,9 @@ import { SshConfigComponent } from './components/ssh-config/ssh-config.component
     AppComponent,
     SshSessionsComponent,
     SshKeysComponent,
-    SshConfigComponent
+    SshConfigComponent,
+
+    RenderBoolPipe
   ],
   imports: [
     BrowserModule,
