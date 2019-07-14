@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MatGridListModule, MatCardModule, MatMenuModule, MatIconModule, MatButtonModule, MatTableModule } from '@angular/material';
 import { LayoutModule } from '@angular/cdk/layout';
-import { SshSessionsComponent } from './components/ssh-sessions/ssh-sessions.component'
+import { SshSessionsComponent } from './components/ssh-sessions/ssh-sessions.component';
+import { SshKeysComponent } from './components/ssh-keys/ssh-keys.component'
 
 @NgModule({
   declarations: [
     AppComponent,
-    SshSessionsComponent
+    SshSessionsComponent,
+    SshKeysComponent
   ],
   imports: [
     BrowserModule,

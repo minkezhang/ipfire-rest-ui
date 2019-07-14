@@ -1,0 +1,22 @@
+<mat-table [dataSource]="keys">
+  <ng-container>
+    <ng-container matColumnDef="file">
+      <mat-header-cell *matHeaderCellDef>File</mat-header-cell>
+      <mat-cell *matCellDef="let k">{{ k.file }}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="type">
+      <mat-header-cell *matHeaderCellDef>Key Type</mat-header-cell>
+      <mat-cell *matCellDef="let k">{{ k.type }}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="fingerprint">
+      <mat-header-cell *matHeaderCellDef>Fingerprint</mat-header-cell>
+      <mat-cell *matCellDef="let k">{{ k.fingerprint }}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="size">
+      <mat-header-cell *matHeaderCellDef>Key Size</mat-header-cell>
+      <mat-cell *matCellDef="let k">{{ k.size * 8 }}b</mat-cell>
+    </ng-container>
+    <mat-header-row *matHeaderRowDef="columns"></mat-header-row>
+    <mat-row *matRowDef="let d; columns: columns"></mat-row>
+  </ng-container>
+</mat-table>

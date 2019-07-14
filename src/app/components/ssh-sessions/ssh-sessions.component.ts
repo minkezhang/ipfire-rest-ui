@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { SshSession } from '../../models/ssh-session';
 
+import { SshSession } from '../../models/ssh-session';
 import { IPFireService } from '../../services/ipfire.service';
 
 @Component({
@@ -18,8 +18,7 @@ export class SshSessionsComponent implements OnInit {
 
   ngOnInit() {
     this.ipfire.getStatus('remote').subscribe(
-        (status) => this.sessions = status['sessions']
-    );
+      (status) => this.sessions = status['sessions']);
   }
 
 }
