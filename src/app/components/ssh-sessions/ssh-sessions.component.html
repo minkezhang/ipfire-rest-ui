@@ -1,0 +1,18 @@
+<mat-table [dataSource]="sessions">
+  <ng-container>
+    <ng-container matColumnDef="username">
+      <mat-header-cell *matHeaderCellDef>Username</mat-header-cell>
+      <mat-cell *matCellDef="let s">{{ s.username }} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="active_since">
+      <mat-header-cell *matHeaderCellDef>Active Since</mat-header-cell>
+      <mat-cell *matCellDef="let s">{{ s.active_since }} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="ip">
+      <mat-header-cell *matHeaderCellDef>IP</mat-header-cell>
+      <mat-cell *matCellDef="let s">{{ s.ip }} </mat-cell>
+    </ng-container>
+    <mat-header-row *matHeaderRowDef="columns"></mat-header-row>
+    <mat-row *matRowDef="let d; columns: columns"></mat-row>
+  </ng-container>
+</mat-table>
