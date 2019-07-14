@@ -3,7 +3,11 @@
   <div *ngIf="config">
     <mat-card-content>
       <h4 class="mat-subheading-1">Allow SSH</h4>
+      <p class="mat-caption">Master control to enable or disable remote access to the router.</p>
       <p class="mat-body">{{ config.enable_ssh | render_bool }}</p>
+      <h4 class="mat-subheading-1">Transparent SSH Port</h4>
+      <p class="mat-caption">If set to True, the SSH server will listen on port 22 instead of port 222</p>
+      <p class="mat-body">{{ config.ssh_port | render_bool }}</p>
       <h4 class="mat-subheading-1">Allow Key Login</h4>
       <p class="mat-body">{{ config.enable_ssh_keys | render_bool }}</p>
       <h4 class="mat-subheading-1">Allow Password Login</h4>
@@ -12,8 +16,6 @@
       <p class="mat-body">{{ config.enable_ssh_portfw | render_bool }}</p>
       <h4 class="mat-subheading-1">Allow Agent Forwarding</h4>
       <p class="mat-body">{{ config.enable_agent_forwarding | render_bool }}</p>
-      <h4 class="mat-subheading-1">Transparent SSH Port</h4>
-      <p class="mat-body">{{ config.ssh_port | render_bool }}</p>
     </mat-card-content>
   </div>
 </mat-card>
