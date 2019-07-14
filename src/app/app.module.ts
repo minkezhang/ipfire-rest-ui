@@ -19,7 +19,8 @@ import { RenderBoolPipe } from './pipes/render-bool';
 
 import { SshSessionsComponent } from './components/ssh-sessions/ssh-sessions.component';
 import { SshKeysComponent } from './components/ssh-keys/ssh-keys.component';
-import { SshConfigComponent } from './components/ssh-config/ssh-config.component'
+import { SshConfigComponent } from './components/ssh-config/ssh-config.component';
+import { DynamicLeasesComponent } from './components/dynamic-leases/dynamic-leases.component'
 
 @NgModule({
   declarations: [
@@ -28,7 +29,9 @@ import { SshConfigComponent } from './components/ssh-config/ssh-config.component
     SshKeysComponent,
     SshConfigComponent,
 
-    RenderBoolPipe
+    RenderBoolPipe,
+
+    DynamicLeasesComponent
   ],
   imports: [
     BrowserModule,
