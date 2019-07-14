@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatTableDataSource } from '@angular/material/table';
 
 import { SshKey } from '../../models/ssh-key';
 import { IPFireService } from '../../services/ipfire.service';
@@ -10,7 +11,7 @@ import { IPFireService } from '../../services/ipfire.service';
 })
 export class SshKeysComponent implements OnInit {
 
-  keys: SshKey[] = null;
+  keys: MatTableDataSource<SshKey>;
 
   columns = ['file', 'type', 'fingerprint', 'size'];
 
@@ -18,7 +19,7 @@ export class SshKeysComponent implements OnInit {
 
   ngOnInit() {
     this.ipfire.getStatus('remote').subscribe(
-      (status) => this.keys = status['keys']);
+      (status) => this.keys = new MatTableDataSource(status['keys']));
   }
 
 }

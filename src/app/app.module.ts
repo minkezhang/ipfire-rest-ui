@@ -4,16 +4,26 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
-import { MatGridListModule, MatCardModule, MatMenuModule, MatIconModule, MatButtonModule, MatTableModule } from '@angular/material';
+import {
+  MatGridListModule,
+  MatCardModule,
+  MatMenuModule,
+  MatIconModule,
+  MatButtonModule,
+  MatSlideToggleModule,
+  MatTableModule,
+  MatFormFieldModule } from '@angular/material';
 import { LayoutModule } from '@angular/cdk/layout';
 import { SshSessionsComponent } from './components/ssh-sessions/ssh-sessions.component';
-import { SshKeysComponent } from './components/ssh-keys/ssh-keys.component'
+import { SshKeysComponent } from './components/ssh-keys/ssh-keys.component';
+import { SshConfigComponent } from './components/ssh-config/ssh-config.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     SshSessionsComponent,
-    SshKeysComponent
+    SshKeysComponent,
+    SshConfigComponent
   ],
   imports: [
     BrowserModule,
@@ -25,6 +35,8 @@ import { SshKeysComponent } from './components/ssh-keys/ssh-keys.component'
     MatIconModule,
     MatButtonModule,
     MatTableModule,
+    MatSlideToggleModule,
+    MatFormFieldModule,
     LayoutModule
   ],
   providers: [],

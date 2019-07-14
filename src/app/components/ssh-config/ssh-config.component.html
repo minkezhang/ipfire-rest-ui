@@ -1,0 +1,8 @@
+<div *ngIf="config">
+  <mat-slide-toggle [checked]="config.enable_ssh" [disabled]="false">Allow SSH</mat-slide-toggle>
+  <mat-slide-toggle [checked]="config.enable_ssh_keys" [disabled]="false">Allow Key Login</mat-slide-toggle>
+  <mat-slide-toggle [checked]="config.enable_ssh_passwords" [disabled]="false">Allow Password Login</mat-slide-toggle>
+  <mat-slide-toggle [checked]="config.enable_ssh_portfw" [disabled]="false">Allow TCP Forwarding</mat-slide-toggle>
+  <mat-slide-toggle [checked]="config.ssh_port" [disabled]="false">Transparent SSH Port</mat-slide-toggle>
+  <!-- TODO(cripplet): Add config.enable_agent_forwarding toggle. -->
+</div>
