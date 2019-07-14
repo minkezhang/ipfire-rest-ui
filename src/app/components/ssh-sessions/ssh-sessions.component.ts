@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { SshSession } from '../../models/ssh-session';
 
+import { IPFireService } from '../../services/ipfire.service';
+
 @Component({
   selector: 'app-ssh-sessions',
   templateUrl: './ssh-sessions.component.html',
@@ -8,15 +10,16 @@ import { SshSession } from '../../models/ssh-session';
 })
 export class SshSessionsComponent implements OnInit {
 
-  sessions = [
-    new SshSession('minkezhang', 'some activation time', '192.168.0.1')
-  ];
+  sessions: SshSession[] = null;
 
-  columns = ['username', 'active_since', 'ip'];
+  columns = ['username', 'login_timestamp', 'ip'];
 
-  constructor() { }
+  constructor(private ipfire: IPFireService) {}
 
   ngOnInit() {
+    this.ipfire.getStatus('remote').subscribe(
+        (status) => this.sessions = status['sessions']
+    );
   }
 
 }

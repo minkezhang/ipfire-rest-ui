@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 
 import { environment } from '../../environments/environment';
 import { Config } from '../models/config';
+import { Status } from '../models/status';
 
 
 @Injectable({
@@ -16,5 +17,10 @@ export class IPFireService {
   getConfig(component: string): Observable<Config> {
     return this.http.get<Config>(
         `${environment.API_URL}/api/rest/component/${component}/config`);
+  }
+
+  getStatus(component: string): Observable<Status> {
+    return this.http.get<Status>(
+        `${environment.API_URL}/api/rest/component/${component}/status`);
   }
 }
