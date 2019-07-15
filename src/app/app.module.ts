@@ -21,6 +21,7 @@ import { SshSessionsComponent } from './components/ssh-sessions/ssh-sessions.com
 import { SshKeysComponent } from './components/ssh-keys/ssh-keys.component';
 import { SshConfigComponent } from './components/ssh-config/ssh-config.component';
 import { DynamicLeasesComponent } from './components/dynamic-leases/dynamic-leases.component';
+import { FixedLeasesComponent } from './components/fixed-leases/fixed-leases.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,9 @@ import { DynamicLeasesComponent } from './components/dynamic-leases/dynamic-leas
 
     RenderBoolPipe,
 
-    DynamicLeasesComponent
+    DynamicLeasesComponent,
+
+    FixedLeasesComponent
   ],
   imports: [
     BrowserModule,

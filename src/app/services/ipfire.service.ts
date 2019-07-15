@@ -7,7 +7,7 @@ import { map } from 'rxjs/operators';
 import { environment } from '../../environments/environment';
 import { Config } from '../models/config';
 import { Status } from '../models/status';
-import { DhcpStatus, IpLease } from '../models/dhcp-status';
+import { DhcpStatus, DynamicLease, FixedLease } from '../models/dhcp-status';
 
 
 @Injectable({
@@ -16,16 +16,16 @@ import { DhcpStatus, IpLease } from '../models/dhcp-status';
 export class IpFireService {
   constructor(private http: HttpClient) {}
 
-  getFixedLeases(): Observable<IpLease[]> {
+  getFixedLeases(): Observable<FixedLease[]> {
     return this.http.get<DhcpStatus>(
       `${environment.API_URL}/api/rest/component/dhcp/status`).pipe(
-      map((data: DhcpStatus): IpLease[] => data.fixed));
+      map((data: DhcpStatus): FixedLease[] => data.fixed));
   }
 
-  getDhcpLeases(): Observable<IpLease[]> {
+  getDhcpLeases(): Observable<DynamicLease[]> {
     return this.http.get<DhcpStatus>(
       `${environment.API_URL}/api/rest/component/dhcp/status`).pipe(
-      map((data: DhcpStatus): IpLease[] => data.dynamic));
+      map((data: DhcpStatus): DynamicLease[] => data.dynamic));
   }
 
   getConfig(component: string): Observable<Config> {

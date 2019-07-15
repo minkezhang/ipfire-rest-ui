@@ -1,0 +1,34 @@
+<mat-table [dataSource]="leases | async">
+  <ng-container>
+    <ng-container matColumnDef="mac">
+      <mat-header-cell *matHeaderCellDef>MAC</mat-header-cell>
+      <mat-cell *matCellDef="let l">{{ l.mac }}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="ip">
+      <mat-header-cell *matHeaderCellDef>IP</mat-header-cell>
+      <mat-cell *matCellDef="let l">{{ l.ip }}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="next_server">
+      <mat-header-cell *matHeaderCellDef>Next Hop</mat-header-cell>
+      <mat-cell *matCellDef="let l">{{ l.next_server }}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="filename">
+      <mat-header-cell *matHeaderCellDef>Filename</mat-header-cell>
+      <mat-cell *matCellDef="let l">{{ l.filename }}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="root_path">
+      <mat-header-cell *matHeaderCellDef>Root Path</mat-header-cell>
+      <mat-cell *matCellDef="let l">{{ l.root_path }}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="remark">
+      <mat-header-cell *matHeaderCellDef>Comment</mat-header-cell>
+      <mat-cell *matCellDef="let l">{{ l.remark }}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="enabled">
+      <mat-header-cell *matHeaderCellDef>Enabled</mat-header-cell>
+      <mat-cell *matCellDef="let l">{{ l.enabled }}</mat-cell>
+    </ng-container>
+    <mat-header-row *matHeaderRowDef="columns"></mat-header-row>
+    <mat-row *matRowDef="let d; columns: columns"></mat-row>
+  </ng-container>
+</mat-table>
