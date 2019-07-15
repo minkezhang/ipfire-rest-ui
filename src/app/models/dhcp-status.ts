@@ -1,3 +1,5 @@
+import { Status } from './status';
+
 export class IpLease extends Object {
   public ip: string;
   public mac: string;
@@ -7,7 +9,7 @@ export class IpLease extends Object {
   public hardware_type: string;
 }
 
-export class DhcpStatus extends Object {
+export class DhcpStatus extends Status {
   public fixed: IpLease[];
   public dynamic: IpLease[];
 }

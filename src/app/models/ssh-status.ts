@@ -1,3 +1,5 @@
+import { Status } from './status';
+
 export class SshKey extends Object {
   public file: string;
   public type: string;
