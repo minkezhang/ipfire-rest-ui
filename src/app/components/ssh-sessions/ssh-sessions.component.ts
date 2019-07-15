@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { MatTableDataSource } from '@angular/material/table';
+
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 import { SshSession } from '../../models/ssh-session';
 import { IPFireService } from '../../services/ipfire.service';
@@ -11,15 +13,15 @@ import { IPFireService } from '../../services/ipfire.service';
 })
 export class SshSessionsComponent implements OnInit {
 
-  sessions: MatTableDataSource<SshSession>;
+  sessions: Observable<SshSession[]>;
 
   columns = ['username', 'login_timestamp', 'ip'];
 
   constructor(private ipfire: IPFireService) {}
 
   ngOnInit() {
-    this.ipfire.getStatus('remote').subscribe(
-      (status) => this.sessions = new MatTableDataSource(status['sessions']));
+    this.sessions = this.ipfire.getStatus('remote').pipe(
+      map((status) => status['sessions']));
   }
 
 }

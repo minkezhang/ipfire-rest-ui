@@ -1,4 +1,4 @@
-<mat-table [dataSource]="keys">
+<mat-table [dataSource]="keys | async">
   <ng-container>
     <ng-container matColumnDef="file">
       <mat-header-cell *matHeaderCellDef>File</mat-header-cell>
