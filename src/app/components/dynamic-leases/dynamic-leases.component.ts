@@ -15,7 +15,7 @@ export class DynamicLeasesComponent implements OnInit {
 
   leases: Observable<IPLease[]>;
 
-  columns = ['ip', 'lease_end', 'type', 'mac', 'hostname'];
+  columns = ['hostname', 'mac', 'ip', 'lease_end', 'type'];
 
   constructor(private ipfire: IPFireService) { }
 
