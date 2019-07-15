@@ -15,7 +15,7 @@ export class SshSessionsComponent implements OnInit {
 
   sessions: Observable<SshSession[]>;
 
-  columns = ['username', 'login_timestamp', 'ip'];
+  columns: string[] = ['username', 'login_timestamp', 'ip'];
 
   constructor(private ipfire: IpFireService) {}
 

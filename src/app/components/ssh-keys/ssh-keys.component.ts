@@ -15,7 +15,7 @@ export class SshKeysComponent implements OnInit {
 
   keys: Observable<SshKey[]>;
 
-  columns = ['file', 'type', 'fingerprint', 'size'];
+  columns: string[] = ['file', 'type', 'fingerprint', 'size'];
 
   constructor(private ipfire: IpFireService) { }
 
