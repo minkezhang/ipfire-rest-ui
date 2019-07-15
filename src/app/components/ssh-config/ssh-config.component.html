@@ -1,6 +1,6 @@
 <mat-card>
   <mat-card-title>SSH Config</mat-card-title>
-  <div *ngIf="config">
+  <div *ngIf="config | async as config">
     <mat-card-content>
       <h4 class="mat-subheading-1">Allow SSH</h4>
       <p class="mat-caption">Master control to enable or disable remote access to the router.</p>

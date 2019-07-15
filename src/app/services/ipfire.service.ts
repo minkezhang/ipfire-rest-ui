@@ -5,26 +5,31 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 import { environment } from '../../environments/environment';
-import { SshConfig } from '../models/ssh-config';
 import { Config } from '../models/config';
 import { Status } from '../models/status';
-import { IPLease } from '../models/lease';
+import { DhcpStatus, IpLease } from '../models/dhcp-status';
 
 
 @Injectable({
   providedIn: 'root'
 })
-export class IPFireService {
+export class IpFireService {
   constructor(private http: HttpClient) {}
 
-  getDHCPLeases(): Observable<IPLease[]> {
-    return this.http.get(
+  getFixedLeases(): Observable<IpLease[]> {
+    return this.http.get<DhcpStatus>(
       `${environment.API_URL}/api/rest/component/dhcp/status`).pipe(
-      map((data): IPLease[] => data['dynamic']));
+      map((data: DhcpStatus): IpLease[] => data.fixed));
   }
 
-  getConfig(component: string): Observable<SshConfig> {
-    return this.http.get<SshConfig>(
+  getDhcpLeases(): Observable<IpLease[]> {
+    return this.http.get<DhcpStatus>(
+      `${environment.API_URL}/api/rest/component/dhcp/status`).pipe(
+      map((data: DhcpStatus): IpLease[] => data.dynamic));
+  }
+
+  getConfig(component: string): Observable<Config> {
+    return this.http.get<Config>(
         `${environment.API_URL}/api/rest/component/${component}/config`);
   }
 

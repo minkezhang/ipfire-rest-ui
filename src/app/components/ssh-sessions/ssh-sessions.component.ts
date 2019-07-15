@@ -3,8 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-import { SshSession } from '../../models/ssh-session';
-import { IPFireService } from '../../services/ipfire.service';
+import { SshStatus, SshSession } from '../../models/ssh-status';
+import { IpFireService } from '../../services/ipfire.service';
 
 @Component({
   selector: 'app-ssh-sessions',
@@ -17,11 +17,11 @@ export class SshSessionsComponent implements OnInit {
 
   columns = ['username', 'login_timestamp', 'ip'];
 
-  constructor(private ipfire: IPFireService) {}
+  constructor(private ipfire: IpFireService) {}
 
   ngOnInit() {
     this.sessions = this.ipfire.getStatus('remote').pipe(
-      map((status) => status['sessions']));
+      map((status: SshStatus) => status.sessions));
   }
 
 }

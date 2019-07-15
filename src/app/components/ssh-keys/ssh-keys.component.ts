@@ -3,8 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-import { SshKey } from '../../models/ssh-key';
-import { IPFireService } from '../../services/ipfire.service';
+import { SshStatus, SshKey } from '../../models/ssh-status';
+import { IpFireService } from '../../services/ipfire.service';
 
 @Component({
   selector: 'app-ssh-keys',
@@ -17,11 +17,11 @@ export class SshKeysComponent implements OnInit {
 
   columns = ['file', 'type', 'fingerprint', 'size'];
 
-  constructor(private ipfire: IPFireService) { }
+  constructor(private ipfire: IpFireService) { }
 
   ngOnInit() {
     this.keys = this.ipfire.getStatus('remote').pipe(
-      map((status) => status['keys']));
+      map((status: SshStatus) => status.keys));
   }
 
 }

@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
 
-import { IPFireService } from '../../services/ipfire.service';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
+
+import { IpFireService } from '../../services/ipfire.service';
 import { SshConfig } from '../../models/ssh-config';
 
 @Component({
@@ -11,12 +13,12 @@ import { SshConfig } from '../../models/ssh-config';
 })
 export class SshConfigComponent implements OnInit {
 
-  config: SshConfig;
+  config: Observable<SshConfig>;
 
-  constructor(private ipfire: IPFireService) { }
+  constructor(private ipfire: IpFireService) { }
 
   ngOnInit() {
-    this.ipfire.getConfig('remote').subscribe(
-      (config) => this.config = Object.create(config));
+    this.config = this.ipfire.getConfig('remote').pipe(
+      map((config: SshConfig): SshConfig => config));
   }
 }

@@ -3,8 +3,8 @@ import { MatTableDataSource } from '@angular/material/table';
 
 import { Observable } from 'rxjs';
 
-import { IPFireService } from '../../services/ipfire.service';
-import { IPLease } from '../../models/lease';
+import { IpFireService } from '../../services/ipfire.service';
+import { IpLease } from '../../models/dhcp-status';
 
 @Component({
   selector: 'app-dynamic-leases',
@@ -13,14 +13,14 @@ import { IPLease } from '../../models/lease';
 })
 export class DynamicLeasesComponent implements OnInit {
 
-  leases: Observable<IPLease[]>;
+  leases: Observable<IpLease[]>;
 
   columns = ['hostname', 'mac', 'ip', 'lease_end', 'type'];
 
-  constructor(private ipfire: IPFireService) { }
+  constructor(private ipfire: IpFireService) { }
 
   ngOnInit() {
-    this.leases = this.ipfire.getDHCPLeases();
+    this.leases = this.ipfire.getDhcpLeases();
   }
 
 }
