@@ -1,0 +1,16 @@
+<div *ngIf="config | async as config">
+  <div *ngFor="let item of config.interfaces | keyvalue">
+    <div>
+      <h2 class="mat-title">{{ item.key }}</h2>
+      <p class="mat-body">{{ item.value.device }} Device Name</p>
+      <p class="mat-body">{{ item.value.mac }} MAC Address</p>
+      <p class="mat-body">{{ item.value.description }} Device Description</p>
+      <p class="mat-body">{{ item.value.driver }} Driver</p>
+      <p class="mat-body">{{ item.value.ip }} IP</p>
+      <p class="mat-body">{{ item.value.network_mask }} Netmask</p>
+      <p class="mat-body">{{ item.value.network_ip }} Network Address</p>
+      <p class="mat-body">{{ item.value.broadcast_ip }} Broadcast Address</p>
+    </div>
+  </div>
+</div>
+
