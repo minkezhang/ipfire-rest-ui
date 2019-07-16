@@ -1,0 +1,18 @@
+<div *ngIf="config | async as config">
+  <div><mat-slide-toggle [checked]="config.dns_update_enabled">Allow DNS Update</mat-slide-toggle></div>
+  <div *ngFor="let item of config.interfaces | keyvalue">
+    <div>
+      <h2 class="mat-title">{{ item.key }}</h2>
+      <div><mat-slide-toggle [checked]="item.value.enable">Enable Interface</mat-slide-toggle></div>
+      <div><mat-slide-toggle [checked]="item.value.enablebootp">Enable BOOTP PXE</mat-slide-toggle></div>
+      <p class="mat-body">{{ item.value.start_addr }} DHCP Start IP</p>
+      <p class="mat-body">{{ item.value.end_addr }} DHCP End IP</p>
+      <p class="mat-body">{{ item.value.domain_name }} Interface Domain Name</p>
+      <p class="mat-body">{{ item.value.default_lease_time }}s Default Lease Time</p>
+      <p class="mat-body">{{ item.value.max_lease_time }} Max Lease Time</p>
+      <p class="mat-body">{{ item.value.dns1 }} Primary DNS</p>
+      <p class="mat-body">{{ item.value.dns2 }} Secondary DNS</p>
+    </div>
+  </div>
+</div>
+

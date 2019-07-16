@@ -22,6 +22,7 @@ import { SshKeysComponent } from './components/ssh-keys/ssh-keys.component';
 import { SshConfigComponent } from './components/ssh-config/ssh-config.component';
 import { DynamicLeasesComponent } from './components/dynamic-leases/dynamic-leases.component';
 import { FixedLeasesComponent } from './components/fixed-leases/fixed-leases.component';
+import { DhcpConfigComponent } from './components/dhcp-config/dhcp-config.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,9 @@ import { FixedLeasesComponent } from './components/fixed-leases/fixed-leases.com
 
     DynamicLeasesComponent,
 
-    FixedLeasesComponent
+    FixedLeasesComponent,
+
+    DhcpConfigComponent
   ],
   imports: [
     BrowserModule,
