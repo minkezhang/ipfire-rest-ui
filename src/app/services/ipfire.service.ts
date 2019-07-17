@@ -9,6 +9,7 @@ import { Config } from '../models/config';
 import { Status } from '../models/status';
 import { DhcpStatus, DynamicLease, FixedLease } from '../models/dhcp-status';
 import { ApiVersion } from '../models/api-version';
+import { Data } from '../models/data';
 
 
 @Injectable({
@@ -32,6 +33,11 @@ export class IpFireService {
   getApiVersion(): Observable<ApiVersion[]> {
     return this.http.get<ApiVersion[]>(
       `${environment.API_URL}/api/rest/version/`);
+  }
+
+  getData(subpath: string): Observable<Data> {
+    return this.http.get<Data>(
+      `${environment.API_URL}/api/rest/data/${subpath}/`);
   }
 
   getConfig(component: string): Observable<Config> {

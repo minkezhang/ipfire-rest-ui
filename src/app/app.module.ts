@@ -2,6 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import { GoogleChartsModule } from 'angular-google-charts';
+
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import {
@@ -16,6 +18,7 @@ import {
 import { LayoutModule } from '@angular/cdk/layout';
 
 import { RenderBoolPipe } from './pipes/render-bool';
+import { RenderDataPipe, RenderLegendPipe } from './pipes/render-data';
 
 import { SshSessionsComponent } from './components/ssh-sessions/ssh-sessions.component';
 import { SshKeysComponent } from './components/ssh-keys/ssh-keys.component';
@@ -28,6 +31,7 @@ import { FirewallRulesComponent } from './components/firewall-rules/firewall-rul
 import { SysConfigComponent } from './components/sys-config/sys-config.component';
 import { ApiVersionComponent } from './components/api-version/api-version.component';
 import { ConnectionsComponent } from './components/connections/connections.component';
+import { CpuDataComponent } from './components/cpu-data/cpu-data.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +41,8 @@ import { ConnectionsComponent } from './components/connections/connections.compo
     SshConfigComponent,
 
     RenderBoolPipe,
+    RenderDataPipe,
+    RenderLegendPipe,
 
     DynamicLeasesComponent,
 
@@ -52,7 +58,9 @@ import { ConnectionsComponent } from './components/connections/connections.compo
 
     ApiVersionComponent,
 
-    ConnectionsComponent
+    ConnectionsComponent,
+
+    CpuDataComponent
   ],
   imports: [
     BrowserModule,
@@ -66,7 +74,8 @@ import { ConnectionsComponent } from './components/connections/connections.compo
     MatTableModule,
     MatSlideToggleModule,
     MatFormFieldModule,
-    LayoutModule
+    LayoutModule,
+    GoogleChartsModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
