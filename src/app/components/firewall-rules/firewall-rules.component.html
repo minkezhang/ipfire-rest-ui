@@ -1,0 +1,39 @@
+<div *ngIf="status | async as status">
+  <div *ngFor="let item of status | keyvalue">
+    <h2  class="mat-title">{{ item.key }}</h2>
+    <mat-table [dataSource]="item.value">
+      <ng-container>
+        <ng-container matColumnDef="action">
+          <mat-header-cell *matHeaderCellDef>Action</mat-header-cell>
+          <mat-cell *matCellDef="let r">{{ r.action }}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="src">
+          <mat-header-cell *matHeaderCellDef>Source</mat-header-cell>
+          <mat-cell *matCellDef="let r">{{ r.src }}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="dest">
+          <mat-header-cell *matHeaderCellDef>Destination</mat-header-cell>
+          <mat-cell *matCellDef="let r">{{ r.dest }}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="nat_target_type">
+          <mat-header-cell *matHeaderCellDef>NAT</mat-header-cell>
+          <mat-cell *matCellDef="let r">{{ r.switches.enable_nat ? r.nat_target_type : null }}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="l4_protocol">
+          <mat-header-cell *matHeaderCellDef>L4 Protocol</mat-header-cell>
+          <mat-cell *matCellDef="let r">{{ r.l4_protocol }}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="src_filter">
+          <mat-header-cell *matHeaderCellDef>Source Port</mat-header-cell>
+          <mat-cell *matCellDef="let r">{{ r.src_filter }}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="dest_filter">
+          <mat-header-cell *matHeaderCellDef>Destination Port</mat-header-cell>
+          <mat-cell *matCellDef="let r">{{ r.dest_filter }}</mat-cell>
+        </ng-container>
+        <mat-header-row *matHeaderRowDef="columns"></mat-header-row>
+        <mat-row *matRowDef="let d; columns: columns"></mat-row>
+      </ng-container>
+    </mat-table>
+  </div>
+</div>

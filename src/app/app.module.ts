@@ -24,6 +24,7 @@ import { DynamicLeasesComponent } from './components/dynamic-leases/dynamic-leas
 import { FixedLeasesComponent } from './components/fixed-leases/fixed-leases.component';
 import { DhcpConfigComponent } from './components/dhcp-config/dhcp-config.component';
 import { EthernetConfigComponent } from './components/ethernet-config/ethernet-config.component';
+import { FirewallRulesComponent } from './components/firewall-rules/firewall-rules.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,9 @@ import { EthernetConfigComponent } from './components/ethernet-config/ethernet-c
 
     DhcpConfigComponent,
 
-    EthernetConfigComponent
+    EthernetConfigComponent,
+
+    FirewallRulesComponent
   ],
   imports: [
     BrowserModule,
