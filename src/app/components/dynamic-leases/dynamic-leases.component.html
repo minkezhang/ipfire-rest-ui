@@ -1,4 +1,4 @@
-<mat-table [dataSource]="leases | async">
+<mat-table [dataSource]="(status | async)?.dynamic">
   <ng-container>
     <ng-container matColumnDef="hostname">
       <mat-header-cell *matHeaderCellDef>Hostname</mat-header-cell>

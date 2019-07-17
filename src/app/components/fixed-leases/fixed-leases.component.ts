@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
-import { FixedLease } from '../../models/dhcp-status';
+import { DhcpStatus } from '../../models/dhcp-status';
 import { IpFireService } from '../../services/ipfire.service';
 
 @Component({
@@ -12,7 +13,7 @@ import { IpFireService } from '../../services/ipfire.service';
 })
 export class FixedLeasesComponent implements OnInit {
 
-  leases: Observable<FixedLease[]>;
+  status: Observable<DhcpStatus>;
 
   columns: string[] = [
     'mac',
@@ -26,7 +27,8 @@ export class FixedLeasesComponent implements OnInit {
   constructor(private ipfire: IpFireService) { }
 
   ngOnInit() {
-    this.leases = this.ipfire.getFixedLeases();
+    this.status = this.ipfire.getStatus('dhcp').pipe(
+      map((status: DhcpStatus): DhcpStatus => status));
   }
 
 }
