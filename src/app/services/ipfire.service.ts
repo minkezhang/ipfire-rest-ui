@@ -8,6 +8,7 @@ import { environment } from '../../environments/environment';
 import { Config } from '../models/config';
 import { Status } from '../models/status';
 import { DhcpStatus, DynamicLease, FixedLease } from '../models/dhcp-status';
+import { ApiVersion } from '../models/api-version';
 
 
 @Injectable({
@@ -28,13 +29,18 @@ export class IpFireService {
       map((data: DhcpStatus): DynamicLease[] => data.dynamic));
   }
 
+  getApiVersion(): Observable<ApiVersion[]> {
+    return this.http.get<ApiVersion[]>(
+      `${environment.API_URL}/api/rest/version/`);
+  }
+
   getConfig(component: string): Observable<Config> {
     return this.http.get<Config>(
-        `${environment.API_URL}/api/rest/component/${component}/config`);
+      `${environment.API_URL}/api/rest/component/${component}/config/`);
   }
 
   getStatus(component: string): Observable<Status> {
     return this.http.get<Status>(
-        `${environment.API_URL}/api/rest/component/${component}/status`);
+      `${environment.API_URL}/api/rest/component/${component}/status/`);
   }
 }

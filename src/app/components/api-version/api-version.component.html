@@ -1,0 +1,7 @@
+<div *ngIf="version | async as version">
+  <p class="mat-body">{{ version[0].major_version }} REST API Version</p>
+  <p class="mat-body">{{ version[0].minor_version }} REST API Revision</p>
+  <p class="mat-body">{{ version[0].release_notes }} REST API Release Notes</p>
+  <p class="mat-body">{{ version[0].timestamp * 1000 | date : "MM.dd.yyyy HH:mm"}} REST API Release Date</p>
+  <p class="mat-body">{{ version[0].ipfire_core }} IPFire Core</p>
+</div>

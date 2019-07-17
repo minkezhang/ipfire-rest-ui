@@ -26,6 +26,7 @@ import { DhcpConfigComponent } from './components/dhcp-config/dhcp-config.compon
 import { EthernetConfigComponent } from './components/ethernet-config/ethernet-config.component';
 import { FirewallRulesComponent } from './components/firewall-rules/firewall-rules.component';
 import { SysConfigComponent } from './components/sys-config/sys-config.component';
+import { ApiVersionComponent } from './components/api-version/api-version.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,9 @@ import { SysConfigComponent } from './components/sys-config/sys-config.component
 
     FirewallRulesComponent,
 
-    SysConfigComponent
+    SysConfigComponent,
+
+    ApiVersionComponent
   ],
   imports: [
     BrowserModule,
