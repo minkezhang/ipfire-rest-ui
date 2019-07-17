@@ -1,0 +1,5 @@
+<div *ngIf="config | async as config">
+  <p class="mat-body">{{ config.ipfire }} IPFire Version</p>
+  <p class="mat-body">{{ config.kernel }} System Info</p>
+  <p class="mat-body">{{ config.pakfire }} Pakfire Version</p>
+</div>
