@@ -27,6 +27,7 @@ import { EthernetConfigComponent } from './components/ethernet-config/ethernet-c
 import { FirewallRulesComponent } from './components/firewall-rules/firewall-rules.component';
 import { SysConfigComponent } from './components/sys-config/sys-config.component';
 import { ApiVersionComponent } from './components/api-version/api-version.component';
+import { ConnectionsComponent } from './components/connections/connections.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,9 @@ import { ApiVersionComponent } from './components/api-version/api-version.compon
 
     SysConfigComponent,
 
-    ApiVersionComponent
+    ApiVersionComponent,
+
+    ConnectionsComponent
   ],
   imports: [
     BrowserModule,

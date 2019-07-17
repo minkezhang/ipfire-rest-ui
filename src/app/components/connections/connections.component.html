@@ -1,0 +1,42 @@
+<mat-table [dataSource]="connections | async">
+  <ng-container>
+    <ng-container matColumnDef="l4_name">
+      <mat-header-cell *matHeaderCellDef>L4 Protocol Name</mat-header-cell>
+      <mat-cell *matCellDef="let c">{{ c.l4_name }}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="src">
+      <mat-header-cell *matHeaderCellDef>Source</mat-header-cell>
+      <mat-cell *matCellDef="let c">{{ c.request.src.ip  + (c.request.src.port ? (':' + c.request.src.port) : '') }}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="dnat">
+      <mat-header-cell *matHeaderCellDef>DNAT</mat-header-cell>
+      <mat-cell *matCellDef="let c">{{ c.request.dest.ip  + (c.request.dest.port ? (':' + c.request.dest.port) : '') }}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="dest">
+      <mat-header-cell *matHeaderCellDef>Destination</mat-header-cell>
+      <mat-cell *matCellDef="let c">{{ c.response.src.ip  + (c.response.src.port ? (':' + c.response.src.port) : '') }}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="snat">
+      <mat-header-cell *matHeaderCellDef>SNAT</mat-header-cell>
+      <mat-cell *matCellDef="let c">{{ c.response.dest.ip  + (c.response.dest.port ? (':' + c.response.dest.port) : '') }}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="rx">
+      <mat-header-cell *matHeaderCellDef>Received Data</mat-header-cell>
+      <mat-cell *matCellDef="let c">{{ c.rx }}B</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="tx">
+      <mat-header-cell *matHeaderCellDef>Transmitted Data</mat-header-cell>
+      <mat-cell *matCellDef="let c">{{ c.tx }}B</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="state">
+      <mat-header-cell *matHeaderCellDef>Connection State</mat-header-cell>
+      <mat-cell *matCellDef="let c">{{ c.state }}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="ttl">
+      <mat-header-cell *matHeaderCellDef>TTL</mat-header-cell>
+      <mat-cell *matCellDef="let c">{{ c.ttl }}s</mat-cell>
+    </ng-container>
+    <mat-header-row *matHeaderRowDef="columns"></mat-header-row>
+    <mat-row *matRowDef="let d; columns: columns"></mat-row>
+  </ng-container>
+</mat-table>
