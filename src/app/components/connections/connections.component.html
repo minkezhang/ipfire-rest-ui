@@ -8,12 +8,12 @@
       <mat-header-cell *matHeaderCellDef>Source</mat-header-cell>
       <mat-cell *matCellDef="let c">{{ c.request.src.ip  + (c.request.src.port ? (':' + c.request.src.port) : '') }}</mat-cell>
     </ng-container>
-    <ng-container matColumnDef="dnat">
-      <mat-header-cell *matHeaderCellDef>DNAT</mat-header-cell>
-      <mat-cell *matCellDef="let c">{{ c.request.dest.ip  + (c.request.dest.port ? (':' + c.request.dest.port) : '') }}</mat-cell>
-    </ng-container>
     <ng-container matColumnDef="dest">
       <mat-header-cell *matHeaderCellDef>Destination</mat-header-cell>
+      <mat-cell *matCellDef="let c">{{ c.request.dest.ip  + (c.request.dest.port ? (':' + c.request.dest.port) : '') }}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="dnat">
+      <mat-header-cell *matHeaderCellDef>DNAT</mat-header-cell>
       <mat-cell *matCellDef="let c">{{ c.response.src.ip  + (c.response.src.port ? (':' + c.response.src.port) : '') }}</mat-cell>
     </ng-container>
     <ng-container matColumnDef="snat">
