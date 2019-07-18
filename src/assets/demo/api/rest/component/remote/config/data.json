@@ -1,0 +1,8 @@
+{
+    "enable_ssh_keys": false,
+    "enable_ssh_passwords": true,
+    "enable_ssh_portfw": false,
+    "enable_ssh": true,
+    "ssh_port": true,
+    "enable_agent_forwarding": false
+}

@@ -4,7 +4,12 @@
 
 export const environment = {
   production: false,
-  API_URL: 'http://192.168.0.12:8080'
+
+  api_root: {
+    // url: 'http://192.168.0.12:8080',
+    url: 'http://sabik.blogzhang.com:4200/demo',
+    demo: true,
+  }
 };
 
 /*

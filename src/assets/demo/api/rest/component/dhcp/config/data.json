@@ -1,0 +1,47 @@
+{
+    "interfaces": {
+        "blue": {
+            "enable": true,
+            "enablebootp": false,
+            "start_addr": "192.168.11.100",
+            "end_addr": "192.168.11.200",
+            "domain_name": "blogzhang.com",
+            "default_lease_time": 3600,
+            "max_lease_time": 7200,
+            "wins1": "",
+            "wins2": "",
+            "dns1": "192.168.11.1",
+            "dns2": "",
+            "ntp1": "",
+            "ntp2": "",
+            "next": "",
+            "file": "",
+            "dns_update_key_name": "",
+            "dns_update_key_secret": "",
+            "dns_update_key_algo": ""
+        },
+        "green": {
+            "enable": true,
+            "enablebootp": false,
+            "start_addr": "192.168.10.100",
+            "end_addr": "192.168.10.200",
+            "domain_name": "blogzhang.com",
+            "default_lease_time": 3600,
+            "max_lease_time": 7200,
+            "wins1": "",
+            "wins2": "",
+            "dns1": "8.8.8.8",
+            "dns2": "8.8.4.4",
+            "ntp1": "",
+            "ntp2": "",
+            "next": "",
+            "file": "",
+            "dns_update_key_name": "",
+            "dns_update_key_secret": "",
+            "dns_update_key_algo": "hmac-md5"
+        }
+    },
+    "sort_leaselist": "IPADDR",
+    "dns_update_enabled": false,
+    "sort_fleaselist": "FIPADDR"
+}

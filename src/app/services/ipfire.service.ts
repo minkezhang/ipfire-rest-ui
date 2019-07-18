@@ -11,6 +11,10 @@ import { ApiVersion } from '../models/api-version';
 import { Data } from '../models/data';
 
 
+let buildUrl = (subpath: string): string => {
+  return `${environment.api_root.url}/${subpath}/${environment.api_root.demo ? "data.json" : ""}`
+}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -19,21 +23,18 @@ export class IpFireService {
 
   getApiVersion(): Observable<ApiVersion[]> {
     return this.http.get<ApiVersion[]>(
-      `${environment.API_URL}/api/rest/version/`);
+      buildUrl('api/rest/version'));
   }
 
   getData(subpath: string): Observable<Data> {
-    return this.http.get<Data>(
-      `${environment.API_URL}/api/rest/data/${subpath}/`);
+    return this.http.get<Data>(buildUrl(`api/rest/data/${subpath}`));
   }
 
   getConfig(component: string): Observable<Config> {
-    return this.http.get<Config>(
-      `${environment.API_URL}/api/rest/component/${component}/config/`);
+    return this.http.get<Config>(buildUrl(`api/rest/component/${component}/config`));
   }
 
   getStatus(component: string): Observable<Status> {
-    return this.http.get<Status>(
-      `${environment.API_URL}/api/rest/component/${component}/status/`);
+    return this.http.get<Status>(buildUrl(`api/rest/component/${component}/status`));
   }
 }

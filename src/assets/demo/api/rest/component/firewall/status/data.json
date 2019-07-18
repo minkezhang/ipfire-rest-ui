@@ -1,0 +1,49 @@
+{
+    "forward": [],
+    "input": [
+        {
+            "position": 1,
+            "action": "ACCEPT",
+            "chain": "INPUTFW",
+            "switches": {
+                "enabled": true,
+                "enable_src_filter": false,
+                "enable_srv": false,
+                "enable_logging": false,
+                "enable_scheduling": false,
+                "enable_nat": true,
+                "throttle_connection_pool": false,
+                "rate_limit_connection": false
+            },
+            "src_type": "STD_NET_SRC",
+            "src": "ALL",
+            "dest_type": "IPFIRE",
+            "dest": "RED1",
+            "l4_protocol": "",
+            "icmp_types": "",
+            "src_filter": "",
+            "icmp_target": "",
+            "dest_filter_type": "",
+            "dest_filter": "",
+            "comment": "delegate traffic monitoring upstream (ALLOW ALL)",
+            "schedule": {
+                "monday": false,
+                "tuesday": false,
+                "wednesday": false,
+                "thursday": false,
+                "friday": false,
+                "saturday": false,
+                "sunday": false
+            },
+            "start_time": 0,
+            "end_time": 0,
+            "nat_target": "AUTO",
+            "dnat_port": null,
+            "nat_target_type": "DNAT",
+            "connection_pool_size": 0,
+            "connection_rate_limit_scalar": 0,
+            "connection_rate_limit_unit": "SECOND"
+        }
+    ],
+    "output": []
+}

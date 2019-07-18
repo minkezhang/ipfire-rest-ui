@@ -1,0 +1,5 @@
+{
+    "ipfire": "IPFire 2.23 (x86_64) - core134",
+    "kernel": "Linux centauri.blogzhang.com 4.14.131-ipfire #1 SMP Thu Jun 27 18:26:18 GMT 2019 x86_64 AMD A10 Micro-6700T APU+AMD Radeon R6 Graphics AuthenticAMD GNU/Linux",
+    "pakfire": "2.23-x86_64"
+}

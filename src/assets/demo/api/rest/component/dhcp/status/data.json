@@ -1,0 +1,29 @@
+{
+    "fixed": [],
+    "dynamic": [
+        {
+            "ip": "192.168.11.100",
+            "start": 1562845790,
+            "end": 1562849390,
+            "hardware_type": "ETHERNET",
+            "mac": "a4:c3:f0:f1:88:3a",
+            "hostname": null
+        },
+        {
+            "ip": "192.168.10.100",
+            "start": 1562559127,
+            "end": 1562562727,
+            "hardware_type": "ETHERNET",
+            "mac": "40:8d:5c:b4:6c:ab",
+            "hostname": null
+        },
+        {
+            "ip": "192.168.10.101",
+            "start": 1562562028,
+            "end": 1562565628,
+            "hardware_type": "ETHERNET",
+            "mac": "00:0e:c6:ce:f1:b6",
+            "hostname": null
+        }
+    ]
+}

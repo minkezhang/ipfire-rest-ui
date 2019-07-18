@@ -39,28 +39,19 @@ import { CpuDataComponent } from './components/cpu-data/cpu-data.component';
     SshSessionsComponent,
     SshKeysComponent,
     SshConfigComponent,
+    DynamicLeasesComponent,
+    FixedLeasesComponent,
+    DhcpConfigComponent,
+    EthernetConfigComponent,
+    FirewallRulesComponent,
+    SysConfigComponent,
+    ApiVersionComponent,
+    ConnectionsComponent,
+    CpuDataComponent,
 
     RenderBoolPipe,
     RenderDataPipe,
-    RenderLegendPipe,
-
-    DynamicLeasesComponent,
-
-    FixedLeasesComponent,
-
-    DhcpConfigComponent,
-
-    EthernetConfigComponent,
-
-    FirewallRulesComponent,
-
-    SysConfigComponent,
-
-    ApiVersionComponent,
-
-    ConnectionsComponent,
-
-    CpuDataComponent
+    RenderLegendPipe
   ],
   imports: [
     BrowserModule,

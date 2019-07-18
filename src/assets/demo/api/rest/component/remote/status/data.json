@@ -1,0 +1,34 @@
+{
+    "keys": [
+        {
+            "file": "/etc/ssh/ssh_host_ecdsa_key.pub",
+            "type": "ECDSA",
+            "fingerprint": "SHA256:fS3JnifgKrVz0/KsDhZ+RtyRjRp/jmPG9unxRfee3aA",
+            "size": 32.0
+        },
+        {
+            "file": "/etc/ssh/ssh_host_ed25519_key.pub",
+            "type": "ED25519",
+            "fingerprint": "SHA256:i1r6Bo/fAhAMkOBAZaGJakmw1pnwHWvtK1M+2YKGAPw",
+            "size": 32.0
+        },
+        {
+            "file": "/etc/ssh/ssh_host_rsa_key.pub",
+            "type": "RSA2",
+            "fingerprint": "SHA256:5+jv3pw6pKzFwUw1jbIxncm9xL34oEqdQGOuRbmMBkk",
+            "size": 256.0
+        }
+    ],
+    "sessions": [
+        {
+            "username": "sagan",
+            "login_timestamp": 1563156780,
+            "ip": "192.168.0.11"
+        },
+        {
+            "username": "sagan",
+            "login_timestamp": 1563157980,
+            "ip": "192.168.0.11"
+        }
+    ]
+}
