@@ -1,3 +1,37 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import "~@angular/material/theming";
 
+$config: mat-typography-config();
+
+.grid-container {
+  width: 320px;
+  grid-template-columns: 152px 152px;
+  grid-template-rows: 32px;
+  grid-column-gap: 16px;
+  grid-row-gap: 8px;
+  align-items: center;
+  display: grid;
+  background-color: red;
+  grid-template-areas:
+    "property value"
+    "caption caption";
+}
+
+.config-property {
+  @include mat-typography-level-to-styles($config, body-1);
+  grid-area: property;
+  background-color: blue;
+}
+
+.config-value {
+  @include mat-typography-level-to-styles($config, body-1);
+  grid-area: value;
+  background-color: green;
+}
+
+.config-caption {
+  @include mat-typography-level-to-styles($config, caption);
+  grid-area: caption;
+  background-color: purple;
+}

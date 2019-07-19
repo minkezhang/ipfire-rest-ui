@@ -1,16 +1,23 @@
-<div *ngIf="config | async as config">
-  <div *ngFor="let item of config.interfaces | keyvalue">
-    <div>
-      <h2 class="mat-title">{{ item.key }}</h2>
-      <p class="mat-body">{{ item.value.device }} Device Name</p>
-      <p class="mat-body">{{ item.value.mac }} MAC Address</p>
-      <p class="mat-body">{{ item.value.description }} Device Description</p>
-      <p class="mat-body">{{ item.value.driver }} Driver</p>
-      <p class="mat-body">{{ item.value.ip }} IP</p>
-      <p class="mat-body">{{ item.value.network_mask }} Netmask</p>
-      <p class="mat-body">{{ item.value.network_ip }} Network Address</p>
-      <p class="mat-body">{{ item.value.broadcast_ip }} Broadcast Address</p>
-    </div>
-  </div>
-</div>
-
+<h2 class="mat-title">Ethernet Config</h2>
+<mat-list *ngIf="config | async as config">
+  <ng-container *ngFor="let item of config.interfaces | keyvalue">
+    <mat-divider></mat-divider>
+    <p matSubheader>{{ item.key }} Interface Configuration</p>
+    <mat-list-item>
+      <p matLine class="mat-body">{{ item.value.device }}</p>
+      <p matLine class="mat-caption">Interface Name</p>
+    </mat-list-item>
+    <mat-list-item>
+      <p matLine class="mat-body">{{ item.value.mac }}</p>
+      <p matLine class="mat-caption">MAC</p>
+    </mat-list-item>
+    <mat-list-item>
+      <p matLine class="mat-body">{{ item.value.ip }}</p>
+      <p matLine class="mat-caption">IP</p>
+    </mat-list-item>
+    <mat-list-item>
+      <p matLine class="mat-body">{{ item.value.network_mask }}</p>
+      <p matLine class="mat-caption">Netmask</p>
+    </mat-list-item>
+  </ng-container>
+</mat-list>

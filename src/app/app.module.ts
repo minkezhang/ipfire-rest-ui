@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatListModule } from '@angular/material/list';
 
 import { GoogleChartsModule } from 'angular-google-charts';
 
@@ -15,6 +16,7 @@ import {
   MatSlideToggleModule,
   MatTableModule,
   MatFormFieldModule } from '@angular/material';
+import { MatDividerModule } from '@angular/material/divider';
 import { LayoutModule } from '@angular/cdk/layout';
 
 import { RenderBoolPipe } from './pipes/render-bool';
@@ -65,6 +67,8 @@ import { CpuDataComponent } from './components/cpu-data/cpu-data.component';
     MatTableModule,
     MatSlideToggleModule,
     MatFormFieldModule,
+    MatDividerModule,
+    MatListModule,
     LayoutModule,
     GoogleChartsModule.forRoot()
   ],

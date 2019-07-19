@@ -1,18 +1,47 @@
-<div *ngIf="config | async as config">
-  <div><mat-slide-toggle [checked]="config.dns_update_enabled">Allow DNS Update</mat-slide-toggle></div>
-  <div *ngFor="let item of config.interfaces | keyvalue">
-    <div>
-      <h2 class="mat-title">{{ item.key }}</h2>
-      <div><mat-slide-toggle [checked]="item.value.enable">Enable Interface</mat-slide-toggle></div>
-      <div><mat-slide-toggle [checked]="item.value.enablebootp">Enable BOOTP PXE</mat-slide-toggle></div>
-      <p class="mat-body">{{ item.value.start_addr }} DHCP Start IP</p>
-      <p class="mat-body">{{ item.value.end_addr }} DHCP End IP</p>
-      <p class="mat-body">{{ item.value.domain_name }} Interface Domain Name</p>
-      <p class="mat-body">{{ item.value.default_lease_time }}s Default Lease Time</p>
-      <p class="mat-body">{{ item.value.max_lease_time }} Max Lease Time</p>
-      <p class="mat-body">{{ item.value.dns1 }} Primary DNS</p>
-      <p class="mat-body">{{ item.value.dns2 }} Secondary DNS</p>
-    </div>
-  </div>
-</div>
-
+<h2 class="mat-title">DHCP Configuration</h2>
+<mat-list *ngIf="config | async as config">
+  <mat-list-item>
+    <p matLine class="mat-body">{{ config.dns_update_enabled }}</p>
+    <p matLine class="mat-caption">Allow DNS Update</p>
+  </mat-list-item>
+  <ng-container *ngFor="let item of config.interfaces | keyvalue">
+    <mat-divider></mat-divider>
+    <p matSubheader>{{ item.key }} Interface Configuration</p>
+    <mat-list-item>
+      <p matLine class="mat-body">{{ item.value.enable }}</p>
+      <p matLine class="mat-caption">Enable Interface</p>
+    </mat-list-item>
+    <mat-list-item>
+      <p matLine class="mat-body">{{ item.value.start_addr }}</p>
+      <p matLine class="mat-caption">DHCP Start IP</p>
+    </mat-list-item>
+    <mat-list-item>
+      <p matLine class="mat-body">{{ item.value.end_addr }}</p>
+      <p matLine class="mat-caption">DHCP End IP</p>
+    </mat-list-item>
+    <mat-list-item>
+      <p matLine class="mat-body">{{ item.value.dns1 ? item.value.dns1 : "None" }}</p>
+      <p matLine class="mat-caption">Primary DNS</p>
+    </mat-list-item>
+    <mat-list-item>
+      <p matLine class="mat-body">{{ item.value.dns2 ? item.value.dns1 : "None" }}</p>
+      <p matLine class="mat-caption">Secondary DNS</p>
+    </mat-list-item>
+    <mat-list-item>
+      <p matLine class="mat-body">{{ item.value.domain_name }}</p>
+      <p matLine class="mat-caption">Interface Domain Name</p>
+    </mat-list-item>
+    <mat-list-item>
+      <p matLine class="mat-body">{{ item.value.default_lease_time }}s</p>
+      <p matLine class="mat-caption">Default Lease Time</p>
+    </mat-list-item>
+    <mat-list-item>
+      <p matLine class="mat-body">{{ item.value.max_lease_time }}s</p>
+      <p matLine class="mat-caption">Max Lease Time</p>
+    </mat-list-item>
+    <mat-list-item>
+      <p matLine class="mat-body">{{ item.value.enablebootp }}</p>
+      <p matLine class="mat-caption">Enable BOOTP PXE</p>
+    </mat-list-item>
+  </ng-container>
+</mat-list>

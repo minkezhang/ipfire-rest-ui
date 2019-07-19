@@ -1,10 +1,30 @@
-<div *ngIf="config | async as config">
-  <div><mat-slide-toggle [checked]="config.enable_ssh">Allow SSH</mat-slide-toggle></div>
-  <p class="mat-caption">Master control to enable or disable remote access to the router.</p>
-  <div><mat-slide-toggle [checked]="config.ssh_port">Transparent SSH Port</mat-slide-toggle></div>
-  <p class="mat-caption">If set to True, the SSH server will listen on port 22 instead of port 222</p>
-  <div><mat-slide-toggle [checked]="config.enable_ssh_keys">Allow Key Login</mat-slide-toggle></div>
-  <div><mat-slide-toggle [checked]="config.enable_ssh_passwords">Allow Password Login</mat-slide-toggle></div>
-  <div><mat-slide-toggle [checked]="config.enable_ssh_portfw">Allow TCP Forwarding</mat-slide-toggle></div>
-  <div><mat-slide-toggle [checked]="config.enable_agent_forwarding">Allow Agent Forwarding</mat-slide-toggle></div>
-</div>
+<h2 class="mat-title">SSH Configuration</h2>
+<mat-list *ngIf="config | async as config">
+  <mat-list-item>
+    <p matLine class="mat-body">{{ config.enable_ssh }}</p>
+    <p matLine class="mat-caption">Allow SSH</p>
+    <p matLine class="mat-caption">Master control to enable or disable remote access to the router.</p>
+  </mat-list-item>
+  <mat-divider></mat-divider>
+  <mat-list-item>
+    <p matLine class="mat-body">{{ config.ssh_port }}</p>
+    <p matLine class="mat-caption">Transparent SSH Port</p>
+    <p matLine class="mat-caption">If set to True, the SSH server will listen on port 22 instead of port 222</p>
+  </mat-list-item>
+  <mat-list-item>
+    <p matLine class="mat-body">{{ config.enable_ssh_passwords }}</p>
+    <p matLine class="mat-caption">Allow Password Login</p>
+  </mat-list-item>
+  <mat-list-item>
+    <p matLine class="mat-body">{{ config.enable_ssh_keys }}</p>
+    <p matLine class="mat-caption">Allow Key Login</p>
+  </mat-list-item>
+  <mat-list-item>
+    <p matLine class="mat-body">{{ config.enable_ssh_portfw }}</p>
+    <p matLine class="mat-caption">Allow TCP Forwarding</p>
+  </mat-list-item>
+  <mat-list-item>
+    <p matLine class="mat-body">{{ config.enable_agent_forwarding }}</p>
+    <p matLine class="mat-caption">Allow Agent Forwarding</p>
+  </mat-list-item>
+</mat-list>

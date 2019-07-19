@@ -1,5 +1,15 @@
-<div *ngIf="config | async as config">
-  <p class="mat-body">{{ config.ipfire }} IPFire Version</p>
-  <p class="mat-body">{{ config.kernel }} System Info</p>
-  <p class="mat-body">{{ config.pakfire }} Pakfire Version</p>
-</div>
+<h2 class="mat-title">System Info</h2>
+<mat-list *ngIf="config | async as config">
+  <mat-list-item>
+    <p matLine class="mat-body">{{ config.ipfire }} IPFire Version</p>
+    <p matLine class="mat-caption">IPFire Version</p>
+  </mat-list-item>
+  <mat-list-item>
+    <p matLine class="mat-body">{{ config.kernel }}</p>
+    <p matLine class="mat-caption">System Info</p>
+  </mat-list-item>
+  <mat-list-item>
+    <p matLine class="mat-body">{{ config.pakfire }}</p>
+    <p matLine class="mat-caption">Pakfire Version</p>
+  </mat-list-item>
+</mat-list>

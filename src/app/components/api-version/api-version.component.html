@@ -1,7 +1,23 @@
-<div *ngIf="version | async as version">
-  <p class="mat-body">{{ version[0].major_version }} REST API Version</p>
-  <p class="mat-body">{{ version[0].minor_version }} REST API Revision</p>
-  <p class="mat-body">{{ version[0].release_notes }} REST API Release Notes</p>
-  <p class="mat-body">{{ version[0].timestamp * 1000 | date : "MM.dd.yyyy HH:mm"}} REST API Release Date</p>
-  <p class="mat-body">{{ version[0].ipfire_core }} IPFire Core</p>
-</div>
+<h2 class="mat-title">REST API Version</h2>
+<mat-list *ngIf="version | async as version">
+  <mat-list-item>
+    <p matLine class="mat-body">{{ version[0].major_version }}</p>
+    <p matLine class="mat-caption">REST API Version</p>
+  </mat-list-item>
+  <mat-list-item>
+    <p matLine class="mat-body">{{ version[0].minor_version }}</p>
+    <p matLine class="mat-caption">REST API Revision</p>
+  </mat-list-item>
+  <mat-list-item>
+    <p matLine class="mat-body">{{ version[0].release_notes }}</p>
+    <p matLine class="mat-caption">Release Notes</p>
+  </mat-list-item>
+  <mat-list-item>
+    <p matLine class="mat-body">{{ version[0].timestamp * 1000 | date : "MM.dd.yyyy HH:mm" }}</p>
+    <p matLine class="mat-caption">Release Date</p>
+  </mat-list-item>
+  <mat-list-item>
+    <p matLine class="mat-body">{{ version[0].ipfire_core }}</p>
+    <p matLine class="mat-caption">IPFire Core</p>
+  </mat-list-item>
+</mat-list>
