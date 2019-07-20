@@ -4,44 +4,46 @@
     <p matLine class="mat-body">{{ config.dns_update_enabled }}</p>
     <p matLine class="mat-caption">Allow DNS Update</p>
   </mat-list-item>
-  <ng-container *ngFor="let item of config.interfaces | keyvalue">
-    <mat-divider></mat-divider>
-    <p matSubheader>{{ item.key }} Interface Configuration</p>
-    <mat-list-item>
-      <p matLine class="mat-body">{{ item.value.enable }}</p>
-      <p matLine class="mat-caption">Enable Interface</p>
-    </mat-list-item>
-    <mat-list-item>
-      <p matLine class="mat-body">{{ item.value.start_addr }}</p>
-      <p matLine class="mat-caption">DHCP Start IP</p>
-    </mat-list-item>
-    <mat-list-item>
-      <p matLine class="mat-body">{{ item.value.end_addr }}</p>
-      <p matLine class="mat-caption">DHCP End IP</p>
-    </mat-list-item>
-    <mat-list-item>
-      <p matLine class="mat-body">{{ item.value.dns1 ? item.value.dns1 : "None" }}</p>
-      <p matLine class="mat-caption">Primary DNS</p>
-    </mat-list-item>
-    <mat-list-item>
-      <p matLine class="mat-body">{{ item.value.dns2 ? item.value.dns1 : "None" }}</p>
-      <p matLine class="mat-caption">Secondary DNS</p>
-    </mat-list-item>
-    <mat-list-item>
-      <p matLine class="mat-body">{{ item.value.domain_name }}</p>
-      <p matLine class="mat-caption">Interface Domain Name</p>
-    </mat-list-item>
-    <mat-list-item>
-      <p matLine class="mat-body">{{ item.value.default_lease_time }}s</p>
-      <p matLine class="mat-caption">Default Lease Time</p>
-    </mat-list-item>
-    <mat-list-item>
-      <p matLine class="mat-body">{{ item.value.max_lease_time }}s</p>
-      <p matLine class="mat-caption">Max Lease Time</p>
-    </mat-list-item>
-    <mat-list-item>
-      <p matLine class="mat-body">{{ item.value.enablebootp }}</p>
-      <p matLine class="mat-caption">Enable BOOTP PXE</p>
-    </mat-list-item>
-  </ng-container>
+  <mat-tab-group>
+    <ng-container *ngFor="let item of config.interfaces | keyvalue">
+      <mat-tab [label]="item.key">
+        <mat-list-item>
+          <p matLine class="mat-body">{{ item.value.enable }}</p>
+          <p matLine class="mat-caption">Enable Interface</p>
+        </mat-list-item>
+        <mat-list-item>
+          <p matLine class="mat-body">{{ item.value.start_addr }}</p>
+          <p matLine class="mat-caption">DHCP Start IP</p>
+        </mat-list-item>
+        <mat-list-item>
+          <p matLine class="mat-body">{{ item.value.end_addr }}</p>
+          <p matLine class="mat-caption">DHCP End IP</p>
+        </mat-list-item>
+        <mat-list-item>
+          <p matLine class="mat-body">{{ item.value.dns1 ? item.value.dns1 : "None" }}</p>
+          <p matLine class="mat-caption">Primary DNS</p>
+        </mat-list-item>
+        <mat-list-item>
+          <p matLine class="mat-body">{{ item.value.dns2 ? item.value.dns1 : "None" }}</p>
+          <p matLine class="mat-caption">Secondary DNS</p>
+        </mat-list-item>
+        <mat-list-item>
+          <p matLine class="mat-body">{{ item.value.domain_name }}</p>
+          <p matLine class="mat-caption">Interface Domain Name</p>
+        </mat-list-item>
+        <mat-list-item>
+          <p matLine class="mat-body">{{ item.value.default_lease_time }}s</p>
+          <p matLine class="mat-caption">Default Lease Time</p>
+        </mat-list-item>
+        <mat-list-item>
+          <p matLine class="mat-body">{{ item.value.max_lease_time }}s</p>
+          <p matLine class="mat-caption">Max Lease Time</p>
+        </mat-list-item>
+        <mat-list-item>
+          <p matLine class="mat-body">{{ item.value.enablebootp }}</p>
+          <p matLine class="mat-caption">Enable BOOTP PXE</p>
+        </mat-list-item>
+      </mat-tab>
+    </ng-container>
+  </mat-tab-group>
 </mat-list>

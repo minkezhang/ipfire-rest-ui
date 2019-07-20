@@ -17,6 +17,7 @@ import {
   MatTableModule,
   MatFormFieldModule } from '@angular/material';
 import { MatDividerModule } from '@angular/material/divider';
+import { MatTabsModule } from '@angular/material/tabs';
 import { LayoutModule } from '@angular/cdk/layout';
 
 import { RenderBoolPipe } from './pipes/render-bool';
@@ -68,6 +69,7 @@ import { CpuDataComponent } from './components/cpu-data/cpu-data.component';
     MatSlideToggleModule,
     MatFormFieldModule,
     MatDividerModule,
+    MatTabsModule,
     MatListModule,
     LayoutModule,
     GoogleChartsModule.forRoot()
