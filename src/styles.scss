@@ -35,3 +35,12 @@ $config: mat-typography-config();
   grid-area: caption;
   background-color: purple;
 }
+
+/**
+ * Align accordion descriptions.
+ * See https://github.com/angular/components/issues/5173.
+ */
+.mat-expansion-panel-header-title, 
+.mat-expansion-panel-header-description {
+  flex-basis: 0;
+}

@@ -15,18 +15,6 @@ export class ConnectionsComponent implements OnInit {
 
   public connections: Observable<Connection[]>;
 
-  columns: string[] = [
-    'l4_name',
-    'src',
-    'snat',
-    'dnat',
-    'dest',
-    'rx',
-    'tx',
-    'state',
-    'ttl',
-  ];
-
   constructor(private ipfire: IpFireService) { }
 
   ngOnInit() {

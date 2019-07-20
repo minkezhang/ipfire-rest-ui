@@ -16,8 +16,6 @@ export class DynamicLeasesComponent implements OnInit {
 
   status: Observable<DhcpStatus>;
 
-  columns: string[] = ['hostname', 'mac', 'ip', 'lease_end', 'type'];
-
   constructor(private ipfire: IpFireService) { }
 
   ngOnInit() {

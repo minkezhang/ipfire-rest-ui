@@ -1,28 +1,35 @@
-<mat-table [dataSource]="(status | async)?.dynamic">
-  <ng-container>
-    <ng-container matColumnDef="hostname">
-      <mat-header-cell *matHeaderCellDef>Hostname</mat-header-cell>
-      <mat-cell *matCellDef="let l">{{ l.hostname }}</mat-cell>
-    </ng-container>
-    <ng-container matColumnDef="lease_end">
-      <mat-header-cell *matHeaderCellDef>Expiration Time</mat-header-cell>
-      <mat-cell *matCellDef="let l">{{ l.end * 1000 | date : "MM.dd.yyyy HH:mm" }}</mat-cell>
-    </ng-container>
-    <ng-container matColumnDef="ip">
-      <mat-header-cell *matHeaderCellDef>IP</mat-header-cell>
-      <mat-cell *matCellDef="let l">{{ l.ip }}</mat-cell>
-    </ng-container>
-    <ng-container matColumnDef="mac">
-      <mat-header-cell *matHeaderCellDef>MAC</mat-header-cell>
-      <mat-cell *matCellDef="let l">{{ l.mac }}</mat-cell>
-    </ng-container>
-    <ng-container matColumnDef="type">
-      <mat-header-cell *matHeaderCellDef>Lease Type</mat-header-cell>
-      <mat-cell *matCellDef="let l">{{ l.hardware_type }}</mat-cell>
-    </ng-container>
-    <mat-header-row *matHeaderRowDef="columns"></mat-header-row>
-    <mat-row *matRowDef="let d; columns: columns"></mat-row>
+<h2 class="mat-title">Dynamic Leases</h2>
+<mat-accordion displayMode="flat"> 
+  <ng-container *ngFor="let l of (status | async)?.dynamic">
+    <mat-expansion-panel class="mat-elevation-z0">
+      <mat-expansion-panel-header>
+        <mat-panel-title>{{ l.hostname ? l.hostname : l.mac }}</mat-panel-title>
+        <mat-panel-description>{{ l.ip }}</mat-panel-description>
+      </mat-expansion-panel-header>
+      <ng-template matExpansionPanelContent>
+        <mat-list>
+          <mat-list-item>
+            <p matLine class="mat-body">{{ l.hostname ? l.hostname : "None" }}</p>
+            <p matLine class="mat-caption">Hostname</p>
+          </mat-list-item>
+          <mat-list-item>
+            <p matLine class="mat-body">{{ l.mac }}</p>
+            <p matLine class="mat-caption">IP</p>
+          </mat-list-item>
+          <mat-list-item>
+            <p matLine class="mat-body">{{ l.ip }}</p>
+            <p matLine class="mat-caption">IP</p>
+          </mat-list-item>
+          <mat-list-item>
+            <p matLine class="mat-body">{{ l.end * 1000 | date : "MM.dd.yyyy HH:mm" }}</p>
+            <p matLine class="mat-caption">Expiration Time</p>
+          </mat-list-item>
+          <mat-list-item>
+            <p matLine class="mat-body">{{ l.hardware_type }}</p>
+            <p matLine class="mat-caption">Lease Type</p>
+          </mat-list-item>
+        </mat-list>
+      </ng-template>
+    </mat-expansion-panel>
   </ng-container>
-</mat-table>
-
-
+</mat-accordion>

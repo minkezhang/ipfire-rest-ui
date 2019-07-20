@@ -1,42 +1,51 @@
-<mat-table [dataSource]="connections | async">
-  <ng-container>
-    <ng-container matColumnDef="l4_name">
-      <mat-header-cell *matHeaderCellDef>L4 Protocol Name</mat-header-cell>
-      <mat-cell *matCellDef="let c">{{ c.l4_name }}</mat-cell>
-    </ng-container>
-    <ng-container matColumnDef="src">
-      <mat-header-cell *matHeaderCellDef>Source</mat-header-cell>
-      <mat-cell *matCellDef="let c">{{ c.request.src.ip  + (c.request.src.port ? (':' + c.request.src.port) : '') }}</mat-cell>
-    </ng-container>
-    <ng-container matColumnDef="dest">
-      <mat-header-cell *matHeaderCellDef>Destination</mat-header-cell>
-      <mat-cell *matCellDef="let c">{{ c.request.dest.ip  + (c.request.dest.port ? (':' + c.request.dest.port) : '') }}</mat-cell>
-    </ng-container>
-    <ng-container matColumnDef="dnat">
-      <mat-header-cell *matHeaderCellDef>DNAT</mat-header-cell>
-      <mat-cell *matCellDef="let c">{{ c.response.src.ip  + (c.response.src.port ? (':' + c.response.src.port) : '') }}</mat-cell>
-    </ng-container>
-    <ng-container matColumnDef="snat">
-      <mat-header-cell *matHeaderCellDef>SNAT</mat-header-cell>
-      <mat-cell *matCellDef="let c">{{ c.response.dest.ip  + (c.response.dest.port ? (':' + c.response.dest.port) : '') }}</mat-cell>
-    </ng-container>
-    <ng-container matColumnDef="rx">
-      <mat-header-cell *matHeaderCellDef>Received Data</mat-header-cell>
-      <mat-cell *matCellDef="let c">{{ c.rx }}B</mat-cell>
-    </ng-container>
-    <ng-container matColumnDef="tx">
-      <mat-header-cell *matHeaderCellDef>Transmitted Data</mat-header-cell>
-      <mat-cell *matCellDef="let c">{{ c.tx }}B</mat-cell>
-    </ng-container>
-    <ng-container matColumnDef="state">
-      <mat-header-cell *matHeaderCellDef>Connection State</mat-header-cell>
-      <mat-cell *matCellDef="let c">{{ c.state }}</mat-cell>
-    </ng-container>
-    <ng-container matColumnDef="ttl">
-      <mat-header-cell *matHeaderCellDef>TTL</mat-header-cell>
-      <mat-cell *matCellDef="let c">{{ c.ttl }}s</mat-cell>
-    </ng-container>
-    <mat-header-row *matHeaderRowDef="columns"></mat-header-row>
-    <mat-row *matRowDef="let d; columns: columns"></mat-row>
+<h2 class="mat-title">Active Connections</h2>
+<mat-accordion displayMode="flat">
+  <ng-container *ngFor="let c of connections | async">
+    <mat-expansion-panel class="mat-elevation-z0">
+      <mat-expansion-panel-header>
+        <mat-panel-title>{{ c.request.src.ip }}</mat-panel-title>
+        <mat-panel-description>{{ c.request.src.port ? c.request.src.port : c.l4_name }}</mat-panel-description>
+      </mat-expansion-panel-header>
+      <ng-template matExpansionPanelContent>
+        <mat-list>
+          <mat-list-item>
+            <p matLine class="mat-body">{{ c.l4_name }}</p>
+            <p matLine class="mat-caption">L4 Protocol Name</p>
+          </mat-list-item>
+          <mat-list-item>
+            <p matLine class="mat-body">{{ c.request.src.ip  + (c.request.src.port ? (':' + c.request.src.port) : '') }}</p>
+            <p matLine class="mat-caption">Source</p>
+          </mat-list-item>
+          <mat-list-item>
+            <p matLine class="mat-body">{{ c.request.dest.ip  + (c.request.dest.port ? (':' + c.request.dest.port) : '') }}</p>
+            <p matLine class="mat-caption">Destination</p>
+          </mat-list-item>
+          <mat-list-item>
+            <p matLine class="mat-body">{{ c.response.src.ip  + (c.response.src.port ? (':' + c.response.src.port) : '') }}</p>
+            <p matLine class="mat-caption">DNAT</p>
+          </mat-list-item>
+          <mat-list-item>
+            <p matLine class="mat-body">{{ c.response.dest.ip  + (c.response.dest.port ? (':' + c.response.dest.port) : '') }}</p>
+            <p matLine class="mat-caption">SNAT</p>
+          </mat-list-item>
+          <mat-list-item>
+            <p matLine class="mat-body">{{ c.rx }}B</p>
+            <p matLine class="mat-caption">Received Data</p>
+          </mat-list-item>
+          <mat-list-item>
+            <p matLine class="mat-body">{{ c.tx }}B</p>
+            <p matLine class="mat-caption">Transmited Data</p>
+          </mat-list-item>
+          <mat-list-item>
+            <p matLine class="mat-body">{{ c.state }}</p>
+            <p matLine class="mat-caption">Connection State</p>
+          </mat-list-item>
+          <mat-list-item>
+            <p matLine class="mat-body">{{ c.ttl }}s</p>
+            <p matLine class="mat-caption">TTL</p>
+          </mat-list-item>
+        </mat-list>
+      </ng-template>
+    </mat-expansion-panel>
   </ng-container>
-</mat-table>
+</mat-accordion>

@@ -1,34 +1,43 @@
-<mat-table [dataSource]="(status | async)?.fixed">
-  <ng-container>
-    <ng-container matColumnDef="mac">
-      <mat-header-cell *matHeaderCellDef>MAC</mat-header-cell>
-      <mat-cell *matCellDef="let l">{{ l.mac }}</mat-cell>
-    </ng-container>
-    <ng-container matColumnDef="ip">
-      <mat-header-cell *matHeaderCellDef>IP</mat-header-cell>
-      <mat-cell *matCellDef="let l">{{ l.ip }}</mat-cell>
-    </ng-container>
-    <ng-container matColumnDef="next_server">
-      <mat-header-cell *matHeaderCellDef>Next Hop</mat-header-cell>
-      <mat-cell *matCellDef="let l">{{ l.next_server }}</mat-cell>
-    </ng-container>
-    <ng-container matColumnDef="filename">
-      <mat-header-cell *matHeaderCellDef>Filename</mat-header-cell>
-      <mat-cell *matCellDef="let l">{{ l.filename }}</mat-cell>
-    </ng-container>
-    <ng-container matColumnDef="root_path">
-      <mat-header-cell *matHeaderCellDef>Root Path</mat-header-cell>
-      <mat-cell *matCellDef="let l">{{ l.root_path }}</mat-cell>
-    </ng-container>
-    <ng-container matColumnDef="remark">
-      <mat-header-cell *matHeaderCellDef>Comment</mat-header-cell>
-      <mat-cell *matCellDef="let l">{{ l.remark }}</mat-cell>
-    </ng-container>
-    <ng-container matColumnDef="enabled">
-      <mat-header-cell *matHeaderCellDef>Enabled</mat-header-cell>
-      <mat-cell *matCellDef="let l">{{ l.enabled }}</mat-cell>
-    </ng-container>
-    <mat-header-row *matHeaderRowDef="columns"></mat-header-row>
-    <mat-row *matRowDef="let d; columns: columns"></mat-row>
+<h2 class="mat-title">Fixed Leases</h2>
+<mat-accordion displayMode="flat">
+  <ng-container *ngFor="let l of (status | async)?.fixed">
+    <mat-expansion-panel class="mat-elevation-z0">
+      <mat-expansion-panel-header>
+        <mat-panel-title>{{ l.mac }}</mat-panel-title>
+        <mat-panel-description>{{ l.ip }}</mat-panel-description>
+      </mat-expansion-panel-header>
+      <ng-template matExpansionPanelContent>
+        <mat-list>
+          <mat-list-item>
+            <p matLine class="mat-body">{{ l.enabled }}</p>
+            <p matLine class="mat-caption">Enabled</p>
+          </mat-list-item>
+          <mat-list-item>
+            <p matLine class="mat-body">{{ l.mac }}</p>
+            <p matLine class="mat-caption">IP</p>
+          </mat-list-item>
+          <mat-list-item>
+            <p matLine class="mat-body">{{ l.ip }}</p>
+            <p matLine class="mat-caption">IP</p>
+          </mat-list-item>
+          <mat-list-item>
+            <p matLine class="mat-body">{{ l.next_server }}</p>
+            <p matLine class="mat-caption">Next Hop</p>
+          </mat-list-item>
+          <mat-list-item>
+            <p matLine class="mat-body">{{ l.filename }}</p>
+            <p matLine class="mat-caption">Filename</p>
+          </mat-list-item>
+          <mat-list-item>
+            <p matLine class="mat-body">{{ l.root_path }}</p>
+            <p matLine class="mat-caption">Root Path</p>
+          </mat-list-item>
+          <mat-list-item>
+            <p matLine class="mat-body">{{ l.remark ? l.remark : "None" }}</p>
+            <p matLine class="mat-caption">Comment</p>
+          </mat-list-item>
+        </mat-list>
+      </ng-template>
+    </mat-expansion-panel>
   </ng-container>
-</mat-table>
+</mat-accordion>

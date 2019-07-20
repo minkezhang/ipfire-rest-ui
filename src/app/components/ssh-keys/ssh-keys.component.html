@@ -1,22 +1,30 @@
-<mat-table [dataSource]="keys | async">
-  <ng-container>
-    <ng-container matColumnDef="file">
-      <mat-header-cell *matHeaderCellDef>File</mat-header-cell>
-      <mat-cell *matCellDef="let k">{{ k.file }}</mat-cell>
-    </ng-container>
-    <ng-container matColumnDef="type">
-      <mat-header-cell *matHeaderCellDef>Key Type</mat-header-cell>
-      <mat-cell *matCellDef="let k">{{ k.type }}</mat-cell>
-    </ng-container>
-    <ng-container matColumnDef="fingerprint">
-      <mat-header-cell *matHeaderCellDef>Fingerprint</mat-header-cell>
-      <mat-cell *matCellDef="let k">{{ k.fingerprint }}</mat-cell>
-    </ng-container>
-    <ng-container matColumnDef="size">
-      <mat-header-cell *matHeaderCellDef>Key Size</mat-header-cell>
-      <mat-cell *matCellDef="let k">{{ k.size * 8 }}b</mat-cell>
-    </ng-container>
-    <mat-header-row *matHeaderRowDef="columns"></mat-header-row>
-    <mat-row *matRowDef="let d; columns: columns"></mat-row>
+<h2 class="mat-title">SSH Sessions</h2>
+<mat-accordion displayMode="flat">
+  <ng-container *ngFor="let k of keys | async">
+    <mat-expansion-panel class="mat-elevation-z0">
+      <mat-expansion-panel-header>
+        <mat-panel-title>{{ (k.file | render_string_split : "/" : -1) | render_string_split : "." : 0 }}</mat-panel-title>
+      </mat-expansion-panel-header>
+      <ng-template matExpansionPanelContent>
+        <mat-list>
+          <mat-list-item>
+            <p matLine class="mat-body">{{ k.file }}</p>
+            <p matLine class="mat-caption">Filename</p>
+          </mat-list-item>
+          <mat-list-item>
+            <p matLine class="mat-body">{{ k.type }}</p>
+            <p matLine class="mat-caption">Key Type</p>
+          </mat-list-item>
+          <mat-list-item>
+            <p matLine class="mat-body">{{ k.fingerprint }}</p>
+            <p matLine class="mat-caption">Fingerprint</p>
+          </mat-list-item>
+          <mat-list-item>
+            <p matLine class="mat-body">{{ k.size * 8 }}b</p>
+            <p matLine class="mat-caption">Key Size</p>
+          </mat-list-item>
+        </mat-list>
+      </ng-template>
+    </mat-expansion-panel>
   </ng-container>
-</mat-table>
+</mat-accordion>

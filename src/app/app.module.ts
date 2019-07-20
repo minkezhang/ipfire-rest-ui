@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatListModule } from '@angular/material/list';
+import { MatRippleModule } from '@angular/material/core';
 
 import { GoogleChartsModule } from 'angular-google-charts';
 
@@ -15,13 +16,19 @@ import {
   MatButtonModule,
   MatSlideToggleModule,
   MatTableModule,
-  MatFormFieldModule } from '@angular/material';
-import { MatDividerModule } from '@angular/material/divider';
-import { MatTabsModule } from '@angular/material/tabs';
+  MatFormFieldModule,
+  MatExpansionModule,
+  MatDividerModule,
+  MatTabsModule,
+  MatToolbarModule,
+  MatSidenavModule
+} from '@angular/material';
+
 import { LayoutModule } from '@angular/cdk/layout';
 
 import { RenderBoolPipe } from './pipes/render-bool';
 import { RenderDataPipe, RenderLegendPipe } from './pipes/render-data';
+import { RenderStringSplitPipe } from './pipes/render-string-split';
 
 import { SshSessionsComponent } from './components/ssh-sessions/ssh-sessions.component';
 import { SshKeysComponent } from './components/ssh-keys/ssh-keys.component';
@@ -54,7 +61,8 @@ import { CpuDataComponent } from './components/cpu-data/cpu-data.component';
 
     RenderBoolPipe,
     RenderDataPipe,
-    RenderLegendPipe
+    RenderLegendPipe,
+    RenderStringSplitPipe,
   ],
   imports: [
     BrowserModule,
@@ -71,7 +79,11 @@ import { CpuDataComponent } from './components/cpu-data/cpu-data.component';
     MatDividerModule,
     MatTabsModule,
     MatListModule,
+    MatRippleModule,
     LayoutModule,
+    MatExpansionModule,
+    MatToolbarModule,
+    MatSidenavModule,
     GoogleChartsModule.forRoot()
   ],
   providers: [],

@@ -15,8 +15,6 @@ export class SshSessionsComponent implements OnInit {
 
   sessions: Observable<SshSession[]>;
 
-  columns: string[] = ['username', 'login_timestamp', 'ip'];
-
   constructor(private ipfire: IpFireService) {}
 
   ngOnInit() {

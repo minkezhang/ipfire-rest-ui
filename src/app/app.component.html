@@ -1,12 +1,30 @@
-<app-dynamic-leases></app-dynamic-leases>
-<app-fixed-leases></app-fixed-leases>
-<app-cpu-data></app-cpu-data>
-<app-connections></app-connections>
-<app-api-version></app-api-version>
-<app-sys-config></app-sys-config>
-<app-firewall-rules></app-firewall-rules>
-<app-ethernet-config></app-ethernet-config>
-<app-dhcp-config></app-dhcp-config>
-<app-ssh-config></app-ssh-config>
-<app-ssh-keys></app-ssh-keys>
-<app-ssh-sessions></app-ssh-sessions>
+<mat-sidenav-container hasBackdrop="false">
+
+  <mat-sidenav mode="push" #sidenav>
+    <mat-nav-list>
+      <mat-list-item>
+        <a href="http://sabik.blogzhang.com:4200">Home</a>
+      </mat-list-item>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button mat-button (click)="sidenav.toggle()"><i class="material-icons">menu</i></button>
+      <span><h1 class="mat-display-4">IPFire</h1></span>
+    </mat-toolbar>
+    <div class="mat-elevation-z5">
+      <app-api-version></app-api-version>
+      <app-sys-config></app-sys-config>
+      <app-ethernet-config></app-ethernet-config>
+      <app-dhcp-config></app-dhcp-config>
+      <app-ssh-config></app-ssh-config>
+      <app-ssh-keys></app-ssh-keys>
+      <app-firewall-rules></app-firewall-rules>
+      <app-dynamic-leases></app-dynamic-leases>
+      <app-fixed-leases></app-fixed-leases>
+      <app-ssh-sessions></app-ssh-sessions>
+      <app-connections></app-connections>
+      <app-cpu-data></app-cpu-data>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

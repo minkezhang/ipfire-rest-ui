@@ -16,16 +16,6 @@ export class FirewallRulesComponent implements OnInit {
 
   public status: Observable<FirewallStatus>;
 
-  public columns: string[] = [
-      'action',
-      'src',
-      'dest',
-      'nat_target_type',
-      'l4_protocol',
-      'src_filter',
-      'dest_filter'
-  ];
-
   constructor(private ipfire: IpFireService) { }
 
   ngOnInit() {

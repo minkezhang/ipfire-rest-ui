@@ -15,8 +15,6 @@ export class SshKeysComponent implements OnInit {
 
   keys: Observable<SshKey[]>;
 
-  columns: string[] = ['file', 'type', 'fingerprint', 'size'];
-
   constructor(private ipfire: IpFireService) { }
 
   ngOnInit() {
