@@ -3,8 +3,7 @@
   <ng-container *ngFor="let c of connections | async">
     <mat-expansion-panel class="mat-elevation-z0">
       <mat-expansion-panel-header>
-        <mat-panel-title>{{ c.request.src.ip }}</mat-panel-title>
-        <mat-panel-description>{{ c.request.src.port ? c.request.src.port : c.l4_name }}</mat-panel-description>
+        <mat-panel-title>{{ c.request.src | render_target }}</mat-panel-title>
       </mat-expansion-panel-header>
       <ng-template matExpansionPanelContent>
         <mat-list>
@@ -13,20 +12,20 @@
             <p matLine class="mat-caption">L4 Protocol Name</p>
           </mat-list-item>
           <mat-list-item>
-            <p matLine class="mat-body">{{ c.request.src.ip  + (c.request.src.port ? (':' + c.request.src.port) : '') }}</p>
+            <p matLine class="mat-body">{{ c.request.src | render_target }}</p>
             <p matLine class="mat-caption">Source</p>
           </mat-list-item>
           <mat-list-item>
-            <p matLine class="mat-body">{{ c.request.dest.ip  + (c.request.dest.port ? (':' + c.request.dest.port) : '') }}</p>
-            <p matLine class="mat-caption">Destination</p>
+            <p matLine class="mat-body">{{ c | render_snat }}</p>
+            <p matLine class="mat-caption">SNAT</p>
           </mat-list-item>
           <mat-list-item>
-            <p matLine class="mat-body">{{ c.response.src.ip  + (c.response.src.port ? (':' + c.response.src.port) : '') }}</p>
+            <p matLine class="mat-body">{{ c | render_dnat }}</p>
             <p matLine class="mat-caption">DNAT</p>
           </mat-list-item>
           <mat-list-item>
-            <p matLine class="mat-body">{{ c.response.dest.ip  + (c.response.dest.port ? (':' + c.response.dest.port) : '') }}</p>
-            <p matLine class="mat-caption">SNAT</p>
+            <p matLine class="mat-body">{{ c.response.src | render_target }}</p>
+            <p matLine class="mat-caption">Destination</p>
           </mat-list-item>
           <mat-list-item>
             <p matLine class="mat-body">{{ c.rx }}B</p>
@@ -37,7 +36,7 @@
             <p matLine class="mat-caption">Transmited Data</p>
           </mat-list-item>
           <mat-list-item>
-            <p matLine class="mat-body">{{ c.state }}</p>
+            <p matLine class="mat-body">{{ c.state ? c.state : "None" }}</p>
             <p matLine class="mat-caption">Connection State</p>
           </mat-list-item>
           <mat-list-item>

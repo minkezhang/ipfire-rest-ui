@@ -29,6 +29,11 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { RenderBoolPipe } from './pipes/render-bool';
 import { RenderDataPipe, RenderLegendPipe } from './pipes/render-data';
 import { RenderStringSplitPipe } from './pipes/render-string-split';
+import {
+  RenderTargetPipe,
+  RenderSNatPipe,
+  RenderDNatPipe
+} from './pipes/render-connection-ips';
 
 import { SshSessionsComponent } from './components/ssh-sessions/ssh-sessions.component';
 import { SshKeysComponent } from './components/ssh-keys/ssh-keys.component';
@@ -63,7 +68,10 @@ import { CpuDataComponent } from './components/cpu-data/cpu-data.component';
     RenderDataPipe,
     RenderLegendPipe,
     RenderStringSplitPipe,
-  ],
+    RenderTargetPipe,
+    RenderSNatPipe,
+    RenderDNatPipe
+ ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,

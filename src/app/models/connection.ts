@@ -4,8 +4,8 @@ export class Target extends Object {
 }
 
 export class Route extends Object {
-  public src: string;
-  public dest: string;
+  public src: Target;
+  public dest: Target;
 }
 
 export class Connection extends Object {
