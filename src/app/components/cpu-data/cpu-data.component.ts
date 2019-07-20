@@ -13,7 +13,7 @@ import { Data } from '../../models/data';
 export class CpuDataComponent implements OnInit {
 
   public data: Observable<Data>;
-  public options: Object = {
+  public options = {
     curveType: 'function',
     vAxis: {
       format: 'short',

@@ -11,9 +11,9 @@ import { ApiVersion } from '../models/api-version';
 import { Data } from '../models/data';
 
 
-let buildUrl = (subpath: string): string => {
-  return `${environment.api_root.url}/${subpath}/${environment.api_root.demo ? "data.json" : ""}`
-}
+const buildUrl = (subpath: string): string => {
+  return `${environment.api_root.url}/${subpath}/${environment.api_root.demo ? 'data.json' : ''}`;
+};
 
 @Injectable({
   providedIn: 'root'

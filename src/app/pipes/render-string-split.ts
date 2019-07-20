@@ -5,7 +5,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class RenderStringSplitPipe implements PipeTransform {
   transform(value: string, delimiter: string, part: number): string {
-    let parts = value.split(delimiter);
+    const parts: string[] = value.split(delimiter);
     if (part < 0) {
       part = parts.length + part;
     }
