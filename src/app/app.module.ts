@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatListModule } from '@angular/material/list';
 import { MatRippleModule } from '@angular/material/core';
@@ -48,6 +49,21 @@ import { ApiVersionComponent } from './components/api-version/api-version.compon
 import { ConnectionsComponent } from './components/connections/connections.component';
 import { CpuDataComponent } from './components/cpu-data/cpu-data.component';
 
+const appRoutes: Routes = [
+  { path: 'api_version', component: ApiVersionComponent },
+  { path: 'connections', component: ConnectionsComponent },
+  { path: 'cpu_data', component: CpuDataComponent },
+  { path: 'dhcp_config', component: DhcpConfigComponent },
+  { path: 'dynamic_leases', component: DynamicLeasesComponent },
+  { path: 'ethernet_config', component: EthernetConfigComponent },
+  { path: 'firewall_rules', component: FirewallRulesComponent },
+  { path: 'fixed_leases', component: FixedLeasesComponent },
+  { path: 'ssh_config', component: SshConfigComponent },
+  { path: 'ssh_keys', component: SshKeysComponent },
+  { path: 'ssh_sessions', component: SshSessionsComponent },
+  { path: 'sys_config', component: SysConfigComponent }
+];
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -92,7 +108,8 @@ import { CpuDataComponent } from './components/cpu-data/cpu-data.component';
     MatExpansionModule,
     MatToolbarModule,
     MatSidenavModule,
-    GoogleChartsModule.forRoot()
+    GoogleChartsModule.forRoot(),
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [],
   bootstrap: [AppComponent]

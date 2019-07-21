@@ -1,4 +1,7 @@
-<h2 class="mat-title">SSH Sessions</h2>
+<mat-toolbar color="primary">
+    <span><h2 class="mat-display-3">SSH Keys</h2></span>
+</mat-toolbar>
+
 <mat-accordion displayMode="flat">
   <ng-container *ngFor="let k of keys | async">
     <mat-expansion-panel class="mat-elevation-z0">

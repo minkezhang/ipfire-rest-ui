@@ -1,4 +1,7 @@
-<h2 class="mat-title">System Info</h2>
+<mat-toolbar color="primary">
+    <span><h2 class="mat-display-3">System Info</h2></span>
+</mat-toolbar>
+
 <mat-list *ngIf="config | async as config">
   <mat-list-item>
     <p matLine class="mat-body">{{ config.ipfire }} IPFire Version</p>

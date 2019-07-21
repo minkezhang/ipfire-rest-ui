@@ -1,4 +1,7 @@
-<h2 class="mat-title">DHCP Configuration</h2>
+<mat-toolbar color="primary">
+    <span><h2 class="mat-display-3">DHCP Configuration</h2></span>
+</mat-toolbar>
+
 <mat-list *ngIf="config | async as config">
   <mat-list-item>
     <p matLine class="mat-body">{{ config.dns_update_enabled }}</p>

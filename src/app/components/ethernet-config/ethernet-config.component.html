@@ -1,4 +1,7 @@
-<h2 class="mat-title">Ethernet Config</h2>
+<mat-toolbar color="primary">
+    <span><h2 class="mat-display-3">Ethernet Config</h2></span>
+</mat-toolbar>
+
 <mat-list *ngIf="config | async as config">
   <mat-tab-group>
     <ng-container *ngFor="let item of config.interfaces | keyvalue">

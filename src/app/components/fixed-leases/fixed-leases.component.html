@@ -1,4 +1,7 @@
-<h2 class="mat-title">Fixed Leases</h2>
+<mat-toolbar color="primary">
+    <span><h2 class="mat-display-3">Fixed Leases</h2></span>
+</mat-toolbar>
+
 <mat-accordion displayMode="flat">
   <ng-container *ngFor="let l of (status | async)?.fixed">
     <mat-expansion-panel class="mat-elevation-z0">

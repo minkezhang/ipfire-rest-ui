@@ -1,4 +1,7 @@
-<h2 class="mat-title">REST API Version</h2>
+<mat-toolbar color="primary">
+    <span><h2 class="mat-display-3">REST API Version</h2></span>
+</mat-toolbar>
+
 <mat-list *ngIf="version | async as version">
   <mat-list-item>
     <p matLine class="mat-body">{{ version[0].major_version }}</p>

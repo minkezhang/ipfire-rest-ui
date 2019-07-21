@@ -1,4 +1,7 @@
-<h2 class="mat-title">Firewall Rules</h2>
+<mat-toolbar color="primary">
+    <span><h2 class="mat-display-3">Firewall Rules</h2></span>
+</mat-toolbar>
+
 <mat-accordion displayMode="flat">
   <mat-tab-group>
     <ng-container *ngFor="let item of status | async | keyvalue">

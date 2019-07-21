@@ -1,6 +1,12 @@
 .header {
   height: 80px;
   z-index: 2;
+  position: sticky;
+  position: -webkit-sticky;
+}
+
+.container {
+  min-height: calc(100vh - 80px - 160px);
 }
 
 .footer {

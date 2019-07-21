@@ -1,4 +1,7 @@
-<h2 class="mat-title">Dynamic Leases</h2>
+<mat-toolbar color="primary">
+    <span><h2 class="mat-display-3">Dynamic Leases</h2></span>
+</mat-toolbar>
+
 <mat-accordion displayMode="flat"> 
   <ng-container *ngFor="let l of (status | async)?.dynamic">
     <mat-expansion-panel class="mat-elevation-z0">
@@ -14,7 +17,7 @@
           </mat-list-item>
           <mat-list-item>
             <p matLine class="mat-body">{{ l.mac }}</p>
-            <p matLine class="mat-caption">IP</p>
+            <p matLine class="mat-caption">MAC</p>
           </mat-list-item>
           <mat-list-item>
             <p matLine class="mat-body">{{ l.ip }}</p>
