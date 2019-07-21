@@ -3,21 +3,19 @@ import {
   Breakpoints,
   BreakpointState
 } from '@angular/cdk/layout';
-import { Component, OnInit } from '@angular/core';
+import { Directive, OnInit } from '@angular/core';
 
 import { Observable } from 'rxjs';
 
-@Component({
+@Directive({
   selector: 'app-media-layout',
-  templateUrl: './media-layout.component.html',
-  styleUrls: ['./media-layout.component.scss']
 })
-export class MediaLayoutComponent implements OnInit {
+export class MediaLayoutDirective implements OnInit {
 
   public is_small: Observable<BreakpointState>;
   public is_large: Observable<BreakpointState>;
 
-  constructor(private breakpoint: BreakpointObserver) {
+  constructor(protected breakpoint: BreakpointObserver) {
     this.is_small = breakpoint.observe([Breakpoints.Handset]);
     this.is_large = breakpoint.observe([Breakpoints.Tablet, Breakpoints.Web]);
   }

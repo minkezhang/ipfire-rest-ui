@@ -47,7 +47,8 @@ import { ApiVersionComponent } from './components/api-version/api-version.compon
 import { ConnectionsComponent } from './components/connections/connections.component';
 import { CpuDataComponent } from './components/cpu-data/cpu-data.component';
 import { LeasesComponent } from './components/leases/leases.component';
-import { MediaLayoutComponent } from './components/shared/media-layout/media-layout.component';
+
+import { MediaLayoutDirective } from './directives/media-layout/media-layout.directive';
 
 const appRoutes: Routes = [
   { path: 'api_version', component: ApiVersionComponent },
@@ -85,7 +86,8 @@ const appRoutes: Routes = [
     RenderSNatPipe,
     RenderDNatPipe,
     LeasesComponent,
-    MediaLayoutComponent
+
+    MediaLayoutDirective
  ],
   imports: [
     BrowserModule,
