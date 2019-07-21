@@ -21,3 +21,10 @@ html, body {
 mat-sidenav {
   width: 240px;
 }
+
+div.viewport {
+  max-width: 640px;
+  margin: auto;
+  min-height: calc(100vh - 304px);
+  background: white;
+}
