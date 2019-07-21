@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ApiVersionComponent } from './api-version.component';
+import { RestApiVersionComponent } from './rest-api-version.component';
 
-describe('ApiVersionComponent', () => {
-  let component: ApiVersionComponent;
-  let fixture: ComponentFixture<ApiVersionComponent>;
+describe('RestApiVersionComponent', () => {
+  let component: RestApiVersionComponent;
+  let fixture: ComponentFixture<RestApiVersionComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ApiVersionComponent ]
+      declarations: [ RestApiVersionComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ApiVersionComponent);
+    fixture = TestBed.createComponent(RestApiVersionComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

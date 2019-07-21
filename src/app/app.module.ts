@@ -43,15 +43,16 @@ import { DhcpConfigComponent } from './components/dhcp-config/dhcp-config.compon
 import { EthernetConfigComponent } from './components/ethernet-config/ethernet-config.component';
 import { FirewallRulesComponent } from './components/firewall-rules/firewall-rules.component';
 import { SysConfigComponent } from './components/sys-config/sys-config.component';
-import { ApiVersionComponent } from './components/api-version/api-version.component';
 import { ConnectionsComponent } from './components/connections/connections.component';
 import { CpuDataComponent } from './components/cpu-data/cpu-data.component';
 import { LeasesComponent } from './components/leases/leases.component';
 
 import { MediaLayoutDirective } from './directives/media-layout/media-layout.directive';
+import { RestApiVersionComponent } from './components/rest-api-version/rest-api-version.component';
+import { RestApiVersionSmallComponent } from './components/rest-api-version/rest-api-version-small/rest-api-version-small.component';
 
 const appRoutes: Routes = [
-  { path: 'api_version', component: ApiVersionComponent },
+  { path: 'rest_api_version', component: RestApiVersionComponent },
   { path: 'connections', component: ConnectionsComponent },
   { path: 'cpu_data', component: CpuDataComponent },
   { path: 'dhcp_config', component: DhcpConfigComponent },
@@ -74,7 +75,6 @@ const appRoutes: Routes = [
     EthernetConfigComponent,
     FirewallRulesComponent,
     SysConfigComponent,
-    ApiVersionComponent,
     ConnectionsComponent,
     CpuDataComponent,
 
@@ -87,7 +87,11 @@ const appRoutes: Routes = [
     RenderDNatPipe,
     LeasesComponent,
 
-    MediaLayoutDirective
+    MediaLayoutDirective,
+
+    RestApiVersionComponent,
+
+    RestApiVersionSmallComponent
  ],
   imports: [
     BrowserModule,

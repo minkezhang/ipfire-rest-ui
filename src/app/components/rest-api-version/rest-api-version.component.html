@@ -1,0 +1,15 @@
+<mat-toolbar color="primary">
+    <span><h2 class="mat-display-3">REST API Version</h2></span>
+</mat-toolbar>
+    
+<div class="viewport mat-elevation-z5">
+  <ng-container
+    *ngIf="(is_small | async).matches; then small_layout else large_layout">
+  </ng-container>
+</div>
+
+<ng-template #small_layout>
+  <app-rest-api-version-small>
+  </app-rest-api-version-small>
+</ng-template>
+<ng-template #large_layout></ng-template>
