@@ -1,15 +1,15 @@
 <mat-toolbar color="primary">
-  <span><h2 class="mat-display-3">SSH Keys</h2></span>
+  <span><h2 class="mat-display-3">System Info</h2></span>
 </mat-toolbar>
-        
+
 <div class="viewport mat-elevation-z5">
   <ng-container
     *ngIf="(is_small | async).matches; then small_layout else large_layout">
   </ng-container>
-</div>      
-            
+</div>
+
 <ng-template #small_layout>
-  <app-ssh-keys-small>
-  </app-ssh-keys-small>
+  <app-sys-version-small>
+  </app-sys-version-small>
 </ng-template>
 <ng-template #large_layout></ng-template>

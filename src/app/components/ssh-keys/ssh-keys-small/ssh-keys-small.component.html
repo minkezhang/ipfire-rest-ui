@@ -1,0 +1,29 @@
+<mat-accordion displayMode="flat">
+  <ng-container *ngFor="let k of ssh_keys | async">
+    <mat-expansion-panel class="mat-elevation-z0">
+      <mat-expansion-panel-header>
+        <mat-panel-title>{{ (k.file | render_string_split : "/" : -1) | render_string_split : "." : 0 }}</mat-panel-title>
+      </mat-expansion-panel-header>
+      <ng-template matExpansionPanelContent>
+        <mat-list>
+          <mat-list-item>
+            <p matLine class="mat-body">{{ k.file }}</p>
+            <p matLine class="mat-caption">Filename</p>
+          </mat-list-item>
+          <mat-list-item>
+            <p matLine class="mat-body">{{ k.type }}</p>
+            <p matLine class="mat-caption">Key Type</p>
+          </mat-list-item>
+          <mat-list-item>
+            <p matLine class="mat-body">{{ k.fingerprint }}</p>
+            <p matLine class="mat-caption">Fingerprint</p>
+          </mat-list-item>
+          <mat-list-item>
+            <p matLine class="mat-body">{{ k.size * 8 }}b</p>
+            <p matLine class="mat-caption">Key Size</p>
+          </mat-list-item>
+        </mat-list>
+      </ng-template>
+    </mat-expansion-panel>
+  </ng-container>
+</mat-accordion>
