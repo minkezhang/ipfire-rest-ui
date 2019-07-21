@@ -39,8 +39,6 @@ import {
 import { SshSessionsComponent } from './components/ssh-sessions/ssh-sessions.component';
 import { SshKeysComponent } from './components/ssh-keys/ssh-keys.component';
 import { SshConfigComponent } from './components/ssh-config/ssh-config.component';
-import { DynamicLeasesComponent } from './components/dynamic-leases/dynamic-leases.component';
-import { FixedLeasesComponent } from './components/fixed-leases/fixed-leases.component';
 import { DhcpConfigComponent } from './components/dhcp-config/dhcp-config.component';
 import { EthernetConfigComponent } from './components/ethernet-config/ethernet-config.component';
 import { FirewallRulesComponent } from './components/firewall-rules/firewall-rules.component';
@@ -48,16 +46,16 @@ import { SysConfigComponent } from './components/sys-config/sys-config.component
 import { ApiVersionComponent } from './components/api-version/api-version.component';
 import { ConnectionsComponent } from './components/connections/connections.component';
 import { CpuDataComponent } from './components/cpu-data/cpu-data.component';
+import { LeasesComponent } from './components/leases/leases.component';
 
 const appRoutes: Routes = [
   { path: 'api_version', component: ApiVersionComponent },
   { path: 'connections', component: ConnectionsComponent },
   { path: 'cpu_data', component: CpuDataComponent },
   { path: 'dhcp_config', component: DhcpConfigComponent },
-  { path: 'dynamic_leases', component: DynamicLeasesComponent },
   { path: 'ethernet_config', component: EthernetConfigComponent },
   { path: 'firewall_rules', component: FirewallRulesComponent },
-  { path: 'fixed_leases', component: FixedLeasesComponent },
+  { path: 'leases', component: LeasesComponent },
   { path: 'ssh_config', component: SshConfigComponent },
   { path: 'ssh_keys', component: SshKeysComponent },
   { path: 'ssh_sessions', component: SshSessionsComponent },
@@ -70,8 +68,6 @@ const appRoutes: Routes = [
     SshSessionsComponent,
     SshKeysComponent,
     SshConfigComponent,
-    DynamicLeasesComponent,
-    FixedLeasesComponent,
     DhcpConfigComponent,
     EthernetConfigComponent,
     FirewallRulesComponent,
@@ -86,7 +82,8 @@ const appRoutes: Routes = [
     RenderStringSplitPipe,
     RenderTargetPipe,
     RenderSNatPipe,
-    RenderDNatPipe
+    RenderDNatPipe,
+    LeasesComponent
  ],
   imports: [
     BrowserModule,

@@ -1,28 +1,20 @@
 import { Component, OnInit } from '@angular/core';
-
+import { MatTableDataSource } from '@angular/material/table';
+      
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-
-import { DhcpStatus } from '../../models/dhcp-status';
+    
 import { IpFireService } from '../../services/ipfire.service';
+import { DhcpStatus } from '../../models/dhcp-status';
 
 @Component({
-  selector: 'app-fixed-leases',
-  templateUrl: './fixed-leases.component.html',
-  styleUrls: ['./fixed-leases.component.scss']
+  selector: 'app-leases',
+  templateUrl: './leases.component.html',
+  styleUrls: ['./leases.component.scss']
 })
-export class FixedLeasesComponent implements OnInit {
+export class LeasesComponent implements OnInit {
 
   status: Observable<DhcpStatus>;
-
-  columns: string[] = [
-    'mac',
-    'ip',
-    'next_server',
-    'filename',
-    'root_path',
-    'remark',
-    'enabled'];
 
   constructor(private ipfire: IpFireService) { }
 
