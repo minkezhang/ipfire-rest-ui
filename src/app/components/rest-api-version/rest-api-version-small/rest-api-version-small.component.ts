@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 
-import { ApiVersion } from '../../../models/api_version';
+import { ApiVersion } from '../../../models/api-version';
 import { IpFireService } from '../../../services/ipfire.service';
 
 @Component({
