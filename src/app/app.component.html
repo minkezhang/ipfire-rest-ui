@@ -1,18 +1,27 @@
-<mat-sidenav-container hasBackdrop="false">
-
+<mat-sidenav-container hasBackdrop="true">
   <mat-sidenav mode="push" #sidenav>
     <mat-nav-list>
       <mat-list-item>
         <a href="http://sabik.blogzhang.com:4200">Home</a>
       </mat-list-item>
     </mat-nav-list>
+    <mat-nav-list>
+      <mat-list-item>
+        <a href="http://sabik.blogzhang.com:4200">Home1</a>
+      </mat-list-item>
+    </mat-nav-list>
+    <mat-nav-list>
+      <mat-list-item>
+        <a href="http://sabik.blogzhang.com:4200">Home2</a>
+      </mat-list-item>
+    </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
-    <mat-toolbar color="primary">
+    <mat-toolbar color="primary" class="header mat-elevation-z5">
       <button mat-button (click)="sidenav.toggle()"><i class="material-icons">menu</i></button>
       <span><h1 class="mat-display-4">IPFire</h1></span>
     </mat-toolbar>
-    <div class="mat-elevation-z5">
+    <div>
       <app-api-version></app-api-version>
       <app-sys-config></app-sys-config>
       <app-ethernet-config></app-ethernet-config>
@@ -25,6 +34,8 @@
       <app-ssh-sessions></app-ssh-sessions>
       <app-connections></app-connections>
       <app-cpu-data></app-cpu-data>
+
+      <mat-toolbar color="primary" class="footer mat-elevation-z5"></mat-toolbar>
     </div>
   </mat-sidenav-content>
 </mat-sidenav-container>
