@@ -1,0 +1,49 @@
+<mat-accordion displayMode="flat">
+  <ng-container *ngFor="let c of connections | async">
+    <mat-expansion-panel class="mat-elevation-z0">
+      <mat-expansion-panel-header>
+        <mat-panel-title>{{ c.request.src | render_target }}</mat-panel-title>
+      </mat-expansion-panel-header>
+      <ng-template matExpansionPanelContent>
+        <mat-list>
+          <mat-list-item>
+            <p matLine class="mat-body">{{ c.l4_name }}</p>
+            <p matLine class="mat-caption">L4 Protocol Name</p>
+          </mat-list-item>
+          <mat-list-item>
+            <p matLine class="mat-body">{{ c.request.src | render_target }}</p>
+            <p matLine class="mat-caption">Source</p>
+          </mat-list-item>
+          <mat-list-item>
+            <p matLine class="mat-body">{{ c | render_snat }}</p>
+            <p matLine class="mat-caption">SNAT</p>
+          </mat-list-item>
+          <mat-list-item>
+            <p matLine class="mat-body">{{ c | render_dnat }}</p>
+            <p matLine class="mat-caption">DNAT</p>
+          </mat-list-item>
+          <mat-list-item>
+            <p matLine class="mat-body">{{ c.response.src | render_target }}</p>
+            <p matLine class="mat-caption">Destination</p>
+          </mat-list-item>
+          <mat-list-item>
+            <p matLine class="mat-body">{{ c.rx }}B</p>
+            <p matLine class="mat-caption">Received Data</p>
+          </mat-list-item>
+          <mat-list-item>
+            <p matLine class="mat-body">{{ c.tx }}B</p>
+            <p matLine class="mat-caption">Transmited Data</p>
+          </mat-list-item>
+          <mat-list-item>
+            <p matLine class="mat-body">{{ c.state ? c.state : "None" }}</p>
+            <p matLine class="mat-caption">Connection State</p>
+          </mat-list-item>
+          <mat-list-item>
+            <p matLine class="mat-body">{{ c.ttl }}s</p>
+            <p matLine class="mat-caption">TTL</p>
+          </mat-list-item>
+        </mat-list>
+      </ng-template>
+    </mat-expansion-panel>
+  </ng-container>
+</mat-accordion>
