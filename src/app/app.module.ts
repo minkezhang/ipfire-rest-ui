@@ -73,11 +73,26 @@ const appRoutes: Routes = [
   { path: 'ssh/sessions', component: SshSessionsComponent },
   { path: 'version/sys', component: SysVersionComponent },
   { path: 'version/rest', component: RestApiVersionComponent },
+  { path: '',
+    redirectTo: '/network/ethernet',
+    pathMatch: 'full'
+  },
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
+
+    RenderBoolPipe,
+    RenderDataPipe,
+    RenderLegendPipe,
+    RenderStringSplitPipe,
+    RenderTargetPipe,
+    RenderSNatPipe,
+    RenderDNatPipe,
+
+    MediaLayoutDirective,
+
     SshSessionsComponent,
     SshKeysComponent,
     SshConfigComponent,
@@ -87,40 +102,18 @@ const appRoutes: Routes = [
     SysVersionComponent,
     ConnectionsComponent,
     CpuDataComponent,
-
-    RenderBoolPipe,
-    RenderDataPipe,
-    RenderLegendPipe,
-    RenderStringSplitPipe,
-    RenderTargetPipe,
-    RenderSNatPipe,
-    RenderDNatPipe,
     NetworkLeasesComponent,
-
-    MediaLayoutDirective,
-
     RestApiVersionComponent,
-
     RestApiVersionSmallComponent,
-
     SshKeysSmallComponent,
-
     SysVersionSmallComponent,
-
     SshSessionsSmallComponent,
-
     SshConfigSmallComponent,
-
     NetworkLeasesSmallComponent,
-
     EthernetConfigSmallComponent,
-
     DhcpConfigSmallComponent,
-
     FirewallRulesSmallComponent,
-
     ConnectionsSmallComponent,
-
     CpuDataSmallComponent 
  ],
   imports: [
