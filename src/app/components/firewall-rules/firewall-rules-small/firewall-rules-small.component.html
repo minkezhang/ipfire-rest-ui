@@ -1,6 +1,6 @@
 <mat-accordion displayMode="flat">
   <mat-tab-group>
-    <ng-container *ngFor="let item of status | async | keyvalue">
+    <ng-container *ngFor="let item of ((status | async) | json) | keyvalue">
       <mat-tab [label]="item.key">
         <ng-container *ngFor="let r of item.value">
           <mat-expansion-panel class="mat-elevation-z0">
