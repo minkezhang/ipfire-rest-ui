@@ -57,6 +57,7 @@ import { SshConfigSmallComponent } from './components/ssh-config/ssh-config-smal
 import { NetworkLeasesSmallComponent } from './components/network-leases/network-leases-small/network-leases-small.component';
 import { EthernetConfigSmallComponent } from './components/ethernet-config/ethernet-config-small/ethernet-config-small.component';
 import { DhcpConfigSmallComponent } from './components/dhcp-config/dhcp-config-small/dhcp-config-small.component';
+import { FirewallRulesSmallComponent } from './components/firewall-rules/firewall-rules-small/firewall-rules-small.component';
 
 const appRoutes: Routes = [
   { path: 'connections', component: ConnectionsComponent },
@@ -113,7 +114,9 @@ const appRoutes: Routes = [
 
     EthernetConfigSmallComponent,
 
-    DhcpConfigSmallComponent 
+    DhcpConfigSmallComponent,
+
+    FirewallRulesSmallComponent 
  ],
   imports: [
     BrowserModule,

@@ -3,56 +3,13 @@
 </mat-toolbar>
 
 <div class="viewport mat-elevation-z5">
-  <mat-accordion displayMode="flat">
-    <mat-tab-group>
-      <ng-container *ngFor="let item of status | async | keyvalue">
-        <mat-tab [label]="item.key">
-          <ng-container *ngFor="let r of item.value">
-            <mat-expansion-panel class="mat-elevation-z0">
-              <mat-expansion-panel-header>
-                <mat-panel-title>{{ r.action }}</mat-panel-title>
-                <mat-panel-description>{{ r.switches.enabled }}</mat-panel-description>
-              </mat-expansion-panel-header>
-              <ng-template matExpansionPanelContent>
-                <mat-list>
-                  <mat-list-item>
-                    <p matLine class="mat-body">{{ r.switches.enabled }}</p>
-                    <p matLine class="mat-caption">Enabled</p>
-                  </mat-list-item>
-                  <mat-list-item>
-                    <p matLine class="mat-body">{{ r.action }}</p>
-                    <p matLine class="mat-caption">Action</p>
-                  </mat-list-item>
-                  <mat-list-item>
-                    <p matLine class="mat-body">{{ r.src }}</p>
-                    <p matLine class="mat-caption">Source</p>
-                  </mat-list-item>
-                  <mat-list-item>
-                    <p matLine class="mat-body">{{ r.dest }}</p>
-                    <p matLine class="mat-caption">Destination</p>
-                  </mat-list-item>
-                  <mat-list-item>
-                    <p matLine class="mat-body">{{ r.switches.enable_nat ? r.nat_target_type : "None" }}</p>
-                    <p matLine class="mat-caption">NAT</p>
-                  </mat-list-item>
-                  <mat-list-item>
-                    <p matLine class="mat-body">{{ r.l4_protocol ? r.l4_protocol : "None" }}</p>
-                    <p matLine class="mat-caption">L4 Protocol</p>
-                  </mat-list-item>
-                  <mat-list-item>
-                    <p matLine class="mat-body">{{ r.src_filter ? r.src_filter : "None" }}</p>
-                    <p matLine class="mat-caption">Source Port</p>
-                  </mat-list-item>
-                  <mat-list-item>
-                    <p matLine class="mat-body">{{ r.dest_filter ? r.dest_filter : "None" }}</p>
-                    <p matLine class="mat-caption">Destination Port</p>
-                  </mat-list-item>
-                </mat-list>
-              </ng-template>
-            </mat-expansion-panel>
-          </ng-container>
-        </mat-tab>
-      </ng-container>
-    </mat-tab-group>
-  </mat-accordion>
+  <ng-container
+    *ngIf="(is_small | async).matches; then small_layout else large_layout">
+  </ng-container>
 </div>
+  
+<ng-template #small_layout>
+  <app-firewall-rules-small>
+  </app-firewall-rules-small>
+</ng-template>
+<ng-template #large_layout></ng-template>
