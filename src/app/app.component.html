@@ -15,13 +15,14 @@
     <mat-nav-list>
       <a mat-list-item routerLink="/firewall_rules" (click)="sidenav.toggle()">Firewall Rules</a>
     </mat-nav-list>
-    <mat-nav-list>
-      <a mat-list-item routerLink="/leases" (click)="sidenav.toggle()">Leases</a>
-    </mat-nav-list>
 
     <!-- Fixed views. -->
 
     <mat-divider></mat-divider>
+
+    <mat-nav-list>
+      <a mat-list-item routerLink="/network/leases" (click)="sidenav.toggle()">Leases</a>
+    </mat-nav-list>
 
     <mat-nav-list>
       <a mat-list-item routerLink="/ssh/config" (click)="sidenav.toggle()">SSH Config</a>

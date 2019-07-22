@@ -54,6 +54,7 @@ import { SshKeysSmallComponent } from './components/ssh-keys/ssh-keys-small/ssh-
 import { SysVersionSmallComponent } from './components/sys-version/sys-version-small/sys-version-small.component';
 import { SshSessionsSmallComponent } from './components/ssh-sessions/ssh-sessions-small/ssh-sessions-small.component';
 import { SshConfigSmallComponent } from './components/ssh-config/ssh-config-small/ssh-config-small.component';
+import { NetworkLeasesSmallComponent } from './components/network-leases/network-leases-small/network-leases-small.component';
 
 const appRoutes: Routes = [
   { path: 'connections', component: ConnectionsComponent },
@@ -61,8 +62,8 @@ const appRoutes: Routes = [
   { path: 'dhcp_config', component: DhcpConfigComponent },
   { path: 'ethernet_config', component: EthernetConfigComponent },
   { path: 'firewall_rules', component: FirewallRulesComponent },
-  { path: 'leases', component: NetworkLeasesComponent },
 
+  { path: 'network/leases', component: NetworkLeasesComponent },
   { path: 'ssh/config', component: SshConfigComponent },
   { path: 'ssh/keys', component: SshKeysComponent },
   { path: 'ssh/sessions', component: SshSessionsComponent },
@@ -104,7 +105,9 @@ const appRoutes: Routes = [
 
     SshSessionsSmallComponent,
 
-    SshConfigSmallComponent 
+    SshConfigSmallComponent,
+
+    NetworkLeasesSmallComponent 
  ],
   imports: [
     BrowserModule,
