@@ -3,28 +3,13 @@
 </mat-toolbar>
 
 <div class="viewport mat-elevation-z5">
-  <mat-list *ngIf="config | async as config">
-    <mat-tab-group>
-      <ng-container *ngFor="let item of config.interfaces | keyvalue">
-        <mat-tab [label]="item.key">
-          <mat-list-item>
-            <p matLine class="mat-body">{{ item.value.device }}</p>
-            <p matLine class="mat-caption">Interface Name</p>
-          </mat-list-item>
-          <mat-list-item>
-            <p matLine class="mat-body">{{ item.value.mac }}</p>
-            <p matLine class="mat-caption">MAC</p>
-          </mat-list-item>
-          <mat-list-item>
-            <p matLine class="mat-body">{{ item.value.ip }}</p>
-            <p matLine class="mat-caption">IP</p>
-          </mat-list-item>
-          <mat-list-item>
-            <p matLine class="mat-body">{{ item.value.network_mask }}</p>
-            <p matLine class="mat-caption">Netmask</p>
-          </mat-list-item>
-        </mat-tab>
-      </ng-container>
-    </mat-tab-group>
-  </mat-list>
-</div>
+  <ng-container
+    *ngIf="(is_small | async).matches; then small_layout else large_layout">
+  </ng-container>
+</div>      
+          
+<ng-template #small_layout>
+  <app-ethernet-config-small>
+  </app-ethernet-config-small>
+</ng-template>
+<ng-template #large_layout></ng-template>

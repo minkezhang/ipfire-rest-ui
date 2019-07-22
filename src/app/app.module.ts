@@ -55,16 +55,18 @@ import { SysVersionSmallComponent } from './components/sys-version/sys-version-s
 import { SshSessionsSmallComponent } from './components/ssh-sessions/ssh-sessions-small/ssh-sessions-small.component';
 import { SshConfigSmallComponent } from './components/ssh-config/ssh-config-small/ssh-config-small.component';
 import { NetworkLeasesSmallComponent } from './components/network-leases/network-leases-small/network-leases-small.component';
+import { EthernetConfigSmallComponent } from './components/ethernet-config/ethernet-config-small/ethernet-config-small.component';
+import { DhcpConfigSmallComponent } from './components/dhcp-config/dhcp-config-small/dhcp-config-small.component';
 
 const appRoutes: Routes = [
   { path: 'connections', component: ConnectionsComponent },
   { path: 'cpu_data', component: CpuDataComponent },
-  { path: 'dhcp_config', component: DhcpConfigComponent },
-  { path: 'ethernet_config', component: EthernetConfigComponent },
   { path: 'firewall_rules', component: FirewallRulesComponent },
 
+  { path: 'network/dhcp', component: DhcpConfigComponent },
+  { path: 'network/ethernet', component: EthernetConfigComponent },
   { path: 'network/leases', component: NetworkLeasesComponent },
-  { path: 'ssh/config', component: SshConfigComponent },
+  { path: 'ssh', component: SshConfigComponent },
   { path: 'ssh/keys', component: SshKeysComponent },
   { path: 'ssh/sessions', component: SshSessionsComponent },
   { path: 'version/sys', component: SysVersionComponent },
@@ -107,7 +109,11 @@ const appRoutes: Routes = [
 
     SshConfigSmallComponent,
 
-    NetworkLeasesSmallComponent 
+    NetworkLeasesSmallComponent,
+
+    EthernetConfigSmallComponent,
+
+    DhcpConfigSmallComponent 
  ],
   imports: [
     BrowserModule,
