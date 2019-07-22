@@ -1,0 +1,26 @@
+<mat-accordion displayMode="flat">
+  <ng-container *ngFor="let s of ssh_sessions | async">
+    <mat-expansion-panel class="mat-elevation-z0">
+      <mat-expansion-panel-header>
+        <mat-panel-title>{{ s.username }}</mat-panel-title>
+        <mat-panel-description>{{ s.ip }}</mat-panel-description>
+      </mat-expansion-panel-header>
+      <ng-template matExpansionPanelContent>
+        <mat-list>
+          <mat-list-item>
+            <p matLine class="mat-body">{{ s.username }}</p>
+            <p matLine class="mat-caption">Login Username</p>
+          </mat-list-item>
+          <mat-list-item>
+            <p matLine class="mat-body">{{ s.ip }}</p>
+            <p matLine class="mat-caption">IP</p>
+          </mat-list-item>
+          <mat-list-item>
+            <p matLine class="mat-body">{{ s.login_timestamp * 1000 | date : "MM.dd.yyyy HH:mm" }}</p>
+            <p matLine class="mat-caption">Active Since</p>
+          </mat-list-item>
+        </mat-list>
+      </ng-template>
+    </mat-expansion-panel>
+  </ng-container>
+</mat-accordion>

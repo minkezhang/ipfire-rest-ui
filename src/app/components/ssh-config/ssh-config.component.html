@@ -3,33 +3,13 @@
 </mat-toolbar>
 
 <div class="viewport mat-elevation-z5">
-  <mat-list *ngIf="config | async as config">
-    <mat-list-item>
-      <p matLine class="mat-body">{{ config.enable_ssh }}</p>
-      <p matLine class="mat-caption">Allow SSH</p>
-      <p matLine class="mat-caption">Master control to enable or disable remote access to the router.</p>
-    </mat-list-item>
-    <mat-divider></mat-divider>
-    <mat-list-item>
-      <p matLine class="mat-body">{{ config.ssh_port }}</p>
-      <p matLine class="mat-caption">Transparent SSH Port</p>
-      <p matLine class="mat-caption">If set to True, the SSH server will listen on port 22 instead of port 222</p>
-    </mat-list-item>
-    <mat-list-item>
-      <p matLine class="mat-body">{{ config.enable_ssh_passwords }}</p>
-      <p matLine class="mat-caption">Allow Password Login</p>
-    </mat-list-item>
-    <mat-list-item>
-      <p matLine class="mat-body">{{ config.enable_ssh_keys }}</p>
-      <p matLine class="mat-caption">Allow Key Login</p>
-    </mat-list-item>
-    <mat-list-item>
-      <p matLine class="mat-body">{{ config.enable_ssh_portfw }}</p>
-      <p matLine class="mat-caption">Allow TCP Forwarding</p>
-    </mat-list-item>
-    <mat-list-item>
-      <p matLine class="mat-body">{{ config.enable_agent_forwarding }}</p>
-      <p matLine class="mat-caption">Allow Agent Forwarding</p>
-    </mat-list-item>
-  </mat-list>
+  <ng-container
+    *ngIf="(is_small | async).matches; then small_layout else large_layout">
+  </ng-container>
 </div>
+      
+<ng-template #small_layout>
+  <app-ssh-config-small>
+  </app-ssh-config-small>
+</ng-template>
+<ng-template #large_layout></ng-template>

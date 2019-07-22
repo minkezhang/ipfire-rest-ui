@@ -52,6 +52,8 @@ import { RestApiVersionComponent } from './components/rest-api-version/rest-api-
 import { RestApiVersionSmallComponent } from './components/rest-api-version/rest-api-version-small/rest-api-version-small.component';
 import { SshKeysSmallComponent } from './components/ssh-keys/ssh-keys-small/ssh-keys-small.component';
 import { SysVersionSmallComponent } from './components/sys-version/sys-version-small/sys-version-small.component';
+import { SshSessionsSmallComponent } from './components/ssh-sessions/ssh-sessions-small/ssh-sessions-small.component';
+import { SshConfigSmallComponent } from './components/ssh-config/ssh-config-small/ssh-config-small.component';
 
 const appRoutes: Routes = [
   { path: 'connections', component: ConnectionsComponent },
@@ -60,13 +62,12 @@ const appRoutes: Routes = [
   { path: 'ethernet_config', component: EthernetConfigComponent },
   { path: 'firewall_rules', component: FirewallRulesComponent },
   { path: 'leases', component: LeasesComponent },
-  { path: 'ssh_config', component: SshConfigComponent },
-  { path: 'ssh_sessions', component: SshSessionsComponent },
 
-
+  { path: 'ssh/config', component: SshConfigComponent },
+  { path: 'ssh/keys', component: SshKeysComponent },
+  { path: 'ssh/sessions', component: SshSessionsComponent },
   { path: 'version/sys', component: SysVersionComponent },
   { path: 'version/rest', component: RestApiVersionComponent },
-  { path: 'ssh/keys', component: SshKeysComponent }
 ];
 
 @NgModule({
@@ -99,7 +100,11 @@ const appRoutes: Routes = [
 
     SshKeysSmallComponent,
 
-    SysVersionSmallComponent
+    SysVersionSmallComponent,
+
+    SshSessionsSmallComponent,
+
+    SshConfigSmallComponent 
  ],
   imports: [
     BrowserModule,
