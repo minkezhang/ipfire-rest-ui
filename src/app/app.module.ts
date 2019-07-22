@@ -59,10 +59,10 @@ import { EthernetConfigSmallComponent } from './components/ethernet-config/ether
 import { DhcpConfigSmallComponent } from './components/dhcp-config/dhcp-config-small/dhcp-config-small.component';
 import { FirewallRulesSmallComponent } from './components/firewall-rules/firewall-rules-small/firewall-rules-small.component';
 import { ConnectionsSmallComponent } from './components/connections/connections-small/connections-small.component';
+import { CpuDataSmallComponent } from './components/cpu-data/cpu-data-small/cpu-data-small.component';
 
 const appRoutes: Routes = [
-  { path: 'cpu_data', component: CpuDataComponent },
-
+  { path: 'data/cpu', component: CpuDataComponent },
   { path: 'network/connections', component: ConnectionsComponent },
   { path: 'network/dhcp', component: DhcpConfigComponent },
   { path: 'network/ethernet', component: EthernetConfigComponent },
@@ -119,7 +119,9 @@ const appRoutes: Routes = [
 
     FirewallRulesSmallComponent,
 
-    ConnectionsSmallComponent 
+    ConnectionsSmallComponent,
+
+    CpuDataSmallComponent 
  ],
   imports: [
     BrowserModule,

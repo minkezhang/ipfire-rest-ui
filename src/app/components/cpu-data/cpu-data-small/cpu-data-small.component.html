@@ -1,0 +1,4 @@
+<div *ngIf="data | async as data">
+  <google-chart type="LineChart" [data]="data | render_data" [columnNames]="data | render_legend" [options]=options>
+  </google-chart>
+</div>

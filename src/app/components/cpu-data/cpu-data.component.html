@@ -3,10 +3,13 @@
 </mat-toolbar>
 
 <div class="viewport mat-elevation-z5">
-  <!--
-  <div *ngIf="data | async as data">
-    <google-chart type="LineChart" [data]="data | render_data" [columnNames]="data | render_legend" [options]=options>
-    </google-chart>
-  </div>
-   -->
+  <ng-container
+    *ngIf="(is_small | async).matches; then small_layout else large_layout">
+  </ng-container>
 </div>
+  
+<ng-template #small_layout>
+  <app-cpu-data-small>
+  </app-cpu-data-small>
+</ng-template>
+<ng-template #large_layout></ng-template>
