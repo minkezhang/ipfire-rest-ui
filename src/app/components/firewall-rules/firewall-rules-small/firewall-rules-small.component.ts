@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-import { FirewallStatus } from '../../../models/firewall-rule';            
+import { FirewallStatus } from '../../../models/firewall-rule';
 import { IpFireService } from '../../../services/ipfire.service';
 
 @Component({

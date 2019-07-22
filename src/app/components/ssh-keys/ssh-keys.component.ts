@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import {
-  MediaLayoutDirective                                                                                                                                                                   
+  MediaLayoutDirective
 } from '../../directives/media-layout/media-layout.directive';
 
 @Component({

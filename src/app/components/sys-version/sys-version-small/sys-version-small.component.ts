@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-  
+
 import { SysConfig } from '../../../models/sys-config';
 import { IpFireService } from '../../../services/ipfire.service';
 

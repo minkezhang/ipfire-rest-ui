@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-      
+
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-      
-import { IpFireService } from '../../../services/ipfire.service';
+
 import { DhcpStatus } from '../../../models/dhcp-status';
-      
+import { IpFireService } from '../../../services/ipfire.service';
+
 
 @Component({
   selector: 'app-network-leases-small',

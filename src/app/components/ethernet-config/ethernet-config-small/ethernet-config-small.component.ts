@@ -3,8 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-import { IpFireService } from '../../../services/ipfire.service';
 import { EthernetConfig } from '../../../models/ethernet-config';
+import { IpFireService } from '../../../services/ipfire.service';
 
 @Component({
   selector: 'app-ethernet-config-small',

@@ -8,7 +8,7 @@ import { Directive, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 
 @Directive({
-  selector: 'app-media-layout',
+  selector: '[appMediaLayout]',
 })
 export class MediaLayoutDirective implements OnInit {
 

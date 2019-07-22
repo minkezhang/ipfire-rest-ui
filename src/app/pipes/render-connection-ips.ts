@@ -1,6 +1,6 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
-import { Target, Connection } from '../models/connection';
+import { Connection, Target } from '../models/connection';
 
 @Pipe({
   name: 'render_target'

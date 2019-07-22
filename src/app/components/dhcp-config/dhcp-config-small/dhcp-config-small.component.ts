@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-    
+
 import { Config } from '../../../models/config';
 import { DhcpConfig } from '../../../models/dhcp-config';
 

@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
-import { 
+import {
   MediaLayoutDirective
 } from '../../directives/media-layout/media-layout.directive';
-  
+
 @Component({
   selector: 'app-network-leases',
   templateUrl: './network-leases.component.html',

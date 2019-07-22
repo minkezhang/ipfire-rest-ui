@@ -1,14 +1,14 @@
-import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
 
 import { Observable } from 'rxjs';
 
 import { environment } from '../../environments/environment';
-import { Config } from '../models/config';
-import { Status } from '../models/status';
-import { DhcpStatus, DynamicLease, FixedLease } from '../models/dhcp-status';
 import { ApiVersion } from '../models/api-version';
+import { Config } from '../models/config';
 import { Data } from '../models/data';
+import { DhcpStatus, DynamicLease, FixedLease } from '../models/dhcp-status';
+import { Status } from '../models/status';
 
 
 const buildUrl = (subpath: string): string => {
