@@ -62,10 +62,10 @@ import { FirewallRulesSmallComponent } from './components/firewall-rules/firewal
 const appRoutes: Routes = [
   { path: 'connections', component: ConnectionsComponent },
   { path: 'cpu_data', component: CpuDataComponent },
-  { path: 'firewall_rules', component: FirewallRulesComponent },
 
   { path: 'network/dhcp', component: DhcpConfigComponent },
   { path: 'network/ethernet', component: EthernetConfigComponent },
+  { path: 'network/firewall', component: FirewallRulesComponent },
   { path: 'network/leases', component: NetworkLeasesComponent },
   { path: 'ssh', component: SshConfigComponent },
   { path: 'ssh/keys', component: SshKeysComponent },
