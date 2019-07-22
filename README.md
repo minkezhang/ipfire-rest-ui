@@ -20,14 +20,6 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 
 Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
-## Deploy Demo
-
-See [tutorial](https://alligator.io/angular/deploying-angular-app-github-pages/). Push to the `demo` branch.
-
-```
-ngh --branch=demo --dir=dist/ipfire-rest-ui
-```
-
 ## See Also
 
 * [ipfire-rest](https://github.com/cripplet/ipfire-rest)
