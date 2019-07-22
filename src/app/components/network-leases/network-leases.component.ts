@@ -8,11 +8,11 @@ import { IpFireService } from '../../services/ipfire.service';
 import { DhcpStatus } from '../../models/dhcp-status';
 
 @Component({
-  selector: 'app-leases',
-  templateUrl: './leases.component.html',
-  styleUrls: ['./leases.component.scss']
+  selector: 'app-network-leases',
+  templateUrl: './network-leases.component.html',
+  styleUrls: ['./network-leases.component.scss']
 })
-export class LeasesComponent implements OnInit {
+export class NetworkLeasesComponent implements OnInit {
 
   status: Observable<DhcpStatus>;
 

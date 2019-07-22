@@ -45,7 +45,7 @@ import { FirewallRulesComponent } from './components/firewall-rules/firewall-rul
 import { SysVersionComponent } from './components/sys-version/sys-version.component';
 import { ConnectionsComponent } from './components/connections/connections.component';
 import { CpuDataComponent } from './components/cpu-data/cpu-data.component';
-import { LeasesComponent } from './components/leases/leases.component';
+import { NetworkLeasesComponent } from './components/network-leases/network-leases.component';
 
 import { MediaLayoutDirective } from './directives/media-layout/media-layout.directive';
 import { RestApiVersionComponent } from './components/rest-api-version/rest-api-version.component';
@@ -61,7 +61,7 @@ const appRoutes: Routes = [
   { path: 'dhcp_config', component: DhcpConfigComponent },
   { path: 'ethernet_config', component: EthernetConfigComponent },
   { path: 'firewall_rules', component: FirewallRulesComponent },
-  { path: 'leases', component: LeasesComponent },
+  { path: 'leases', component: NetworkLeasesComponent },
 
   { path: 'ssh/config', component: SshConfigComponent },
   { path: 'ssh/keys', component: SshKeysComponent },
@@ -90,7 +90,7 @@ const appRoutes: Routes = [
     RenderTargetPipe,
     RenderSNatPipe,
     RenderDNatPipe,
-    LeasesComponent,
+    NetworkLeasesComponent,
 
     MediaLayoutDirective,
 
